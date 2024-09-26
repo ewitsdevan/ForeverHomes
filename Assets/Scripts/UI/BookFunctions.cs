@@ -9,6 +9,10 @@ using Image = UnityEngine.UI.Image;
 
 public class BookFunctions : MonoBehaviour
 {
+    void Start()
+    {
+        HideBook();
+    }
     public void ToggleBook()
     {
         if (gameObject.activeSelf == false)
