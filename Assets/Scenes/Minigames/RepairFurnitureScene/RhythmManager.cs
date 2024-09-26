@@ -8,11 +8,17 @@ using Random = UnityEngine.Random;
 public class RhythmManager : MonoBehaviour
 {
     public Timer timer;
+
+    public int numberOfNails = 4;
+    public int[] rhythmPoints;
+    public int nailPostion;
+
+    public GameObject nails;
     
-    public int[] rhythmPoints = new int[4];
     // Start is called before the first frame update
     void Start()
     {
+        rhythmPoints = new int[numberOfNails];
         SetRhythmPoints();
     }
     
@@ -20,17 +26,20 @@ public class RhythmManager : MonoBehaviour
     void SetRhythmPoints()
     {
         //Setting random value for four points in rhythm
-        rhythmPoints[0] = Random.Range(1, 2);
-        rhythmPoints[1] = Random.Range(3, 5);
-        rhythmPoints[2] = Random.Range(6, 7);
-        rhythmPoints[3] = Random.Range(8, 10);
+        for (int i = 0; i < rhythmPoints.Length; i++)
+        {
+            rhythmPoints[i] = Random.Range(0, nailPostion);
+            Instantiate(nails, new Vector3(rhythmPoints[i], 0, 0), Quaternion.identity);
+        }
     }
 
     private void Update()
     {
-        //if (timer.currentTime = rhythm points value + or - 0.5)
-       // {
-            
-       // }
+        /*
+        if (timer.currentTime >= rhythmPoints[nextPointIndex] + or - 0.5)
+        {
+            nextPointIndex++
+        }
+    */
     }
 }
