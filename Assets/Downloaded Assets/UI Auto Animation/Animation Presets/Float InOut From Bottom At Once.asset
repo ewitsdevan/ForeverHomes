@@ -71,9 +71,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   useScaleAnimation: 0
   scaleDelay: 0
-  scaleDuration: 0.5
-  delayPerElementScale: 0.2
-  offsetScale: {x: 1, y: 1}
+  scaleDuration: 0.4
+  delayPerElementScale: 0
+  offsetScale: {x: -2, y: -2}
   curveScale:
     serializedVersion: 2
     m_Curve:
@@ -127,3 +127,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  autoTrigger: 0
+  autoTriggerTimer: 5
