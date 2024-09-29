@@ -24,10 +24,18 @@ public class BookFunctions : MonoBehaviour
     private void ShowBook()
     {
         gameObject.SetActive(true);
+        gameObject.GetComponent<UIAutoAnimation>().EntranceAnimation();
     }
 
     private void HideBook()
     {
+        gameObject.GetComponent<UIAutoAnimation>().ExitAnimation();
+        StartCoroutine(HideDelay());
+    }
+
+    IEnumerator HideDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
 }
