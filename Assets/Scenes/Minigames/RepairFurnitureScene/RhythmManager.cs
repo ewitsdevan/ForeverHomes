@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using Random = UnityEngine.Random;
+ using UnityEngine.Serialization;
+ using Random = UnityEngine.Random;
 
 public class RhythmManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class RhythmManager : MonoBehaviour
     public int[] rhythmPoints;
     public int nailPostion;
 
-    public GameObject nails;
+    public GameObject nail;
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class RhythmManager : MonoBehaviour
         for (int i = 0; i < rhythmPoints.Length; i++)
         {
             rhythmPoints[i] = Random.Range(0, nailPostion);
-            Instantiate(nails, new Vector3(rhythmPoints[i], 0, 0), Quaternion.identity);
+            Instantiate(nail, new Vector3(rhythmPoints[i], 0, 0), Quaternion.identity);
         }
     }
 
