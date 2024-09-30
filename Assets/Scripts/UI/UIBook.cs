@@ -1,3 +1,5 @@
+// Created by Devan Laczko, 26/09/2024
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
-public class BookFunctions : MonoBehaviour
+public class UIBook : MonoBehaviour
 {
     public void ToggleBook()
     {
