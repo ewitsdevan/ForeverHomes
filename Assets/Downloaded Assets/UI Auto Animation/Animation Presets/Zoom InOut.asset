@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useAlphaAnimation: 1
   alphaDelay: 0
-  alphaDuration: 0.25
-  delayPerElementAlpha: 0.2
+  alphaDuration: 0.1
+  delayPerElementAlpha: 0
   curveAlpha:
     serializedVersion: 2
     m_Curve:
@@ -89,7 +89,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   useScaleAnimation: 1
   scaleDelay: 0
-  scaleDuration: 0.25
+  scaleDuration: 0.1
   delayPerElementScale: 0
   offsetScale: {x: 0, y: 0}
   curveScale:

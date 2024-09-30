@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 8256b7c554f2a41e9a8d731774faa759
+guid: 7d7c1129af2864708b2374bab4273a4f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Couch_Chair_Texture1
+    second: {fileID: 2100000, guid: 53c1e38da331d4f65bb81215f1325088, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
