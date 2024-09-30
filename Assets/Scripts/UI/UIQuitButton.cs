@@ -9,6 +9,7 @@ public class UIQuitButton : MonoBehaviour
     // Quits Game
     public void Quit()
     {
+        print("UIQuitButton: Quit");
         Application.Quit();
     }
 }

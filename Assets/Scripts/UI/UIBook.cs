@@ -35,7 +35,7 @@ public class UIBook : MonoBehaviour
 
     IEnumerator HideDelay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         gameObject.SetActive(false);
     }
 }

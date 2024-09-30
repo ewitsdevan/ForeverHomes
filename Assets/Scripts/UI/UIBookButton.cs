@@ -33,7 +33,7 @@ public class UIBookButton : MonoBehaviour
     IEnumerator Animation()
     {
         imageObject.GetComponent<UIAutoAnimation>().ExitAnimation();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
         
         if (toggle == false)
         {
@@ -67,7 +67,7 @@ public class UIBookButton : MonoBehaviour
         // Temporarily disables button during animation to prevent breakage.
         gameObject.GetComponent<Button>().interactable = false;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         
         gameObject.GetComponent<Button>().interactable = true;
     }
