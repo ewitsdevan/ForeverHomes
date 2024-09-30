@@ -1,13 +1,11 @@
 // Created by Devan Laczko, 26/09/2024
+// Updated 30/09/2024
 
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
 
 public class UIBook : MonoBehaviour
 {
