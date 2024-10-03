@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6093592463355912122, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4498408a2cea30949953fd5b0192dddf, type: 2}
     - target: {fileID: -4683669308469848369, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -331,7 +335,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ebb6f0b681590be42b52da294a3f0337, type: 2}
+    - target: {fileID: -1806680513116206669, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4498408a2cea30949953fd5b0192dddf, type: 2}
     - target: {fileID: -1461304994638716399, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4498408a2cea30949953fd5b0192dddf, type: 2}
+    - target: {fileID: -1120989108687609925, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4498408a2cea30949953fd5b0192dddf, type: 2}
@@ -359,6 +371,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ebb6f0b681590be42b52da294a3f0337, type: 2}
+    - target: {fileID: 6745302439343835087, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4498408a2cea30949953fd5b0192dddf, type: 2}
     - target: {fileID: 6944656104360116776, guid: 416b065355fca1147839dc2fb06dc69b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
