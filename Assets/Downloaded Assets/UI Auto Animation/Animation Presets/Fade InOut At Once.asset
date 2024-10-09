@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useAlphaAnimation: 1
   alphaDelay: 0
-  alphaDuration: 0.25
+  alphaDuration: 0.1
   delayPerElementAlpha: 0
   curveAlpha:
     serializedVersion: 2

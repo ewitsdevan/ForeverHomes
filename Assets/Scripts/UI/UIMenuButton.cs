@@ -8,6 +8,7 @@ public class UIMenuButton : MonoBehaviour
 {
     public GameObject targetMenu;
     public GameObject otherMenu;
+    public GameObject mainMenu;
 
     public void ChangeMenu()
     {
@@ -25,10 +26,12 @@ public class UIMenuButton : MonoBehaviour
     IEnumerator HideCurrentMenu()
     {
         otherMenu.GetComponent<UIAutoAnimation>().ExitAnimation();
-        yield return new WaitForSeconds(0.25f);
+        mainMenu.GetComponent<UIAutoAnimation>().ExitAnimation();
+        yield return new WaitForSeconds(0.5f);
         otherMenu.SetActive(false);
         
         targetMenu.SetActive(true);
         targetMenu.GetComponent<UIAutoAnimation>().EntranceAnimation();
+        mainMenu.GetComponent<UIAutoAnimation>().EntranceAnimation();
     }
 }
