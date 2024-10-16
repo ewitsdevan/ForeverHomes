@@ -13,6 +13,7 @@ public class UIBookButton : MonoBehaviour
     public Sprite icon2;
     private bool toggle = false;
     public GameObject bookObject;
+    public GameObject isometricCamera;
     
     public void ToggleIcon()
     {

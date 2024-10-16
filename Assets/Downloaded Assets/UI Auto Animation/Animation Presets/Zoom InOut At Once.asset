@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09becc92ca7be05459bdfa3f9c10c5b0, type: 3}
   m_Name: Zoom InOut At Once
   m_EditorClassIdentifier: 
-  useAlphaAnimation: 1
+  useAlphaAnimation: 0
   alphaDelay: 0
   alphaDuration: 0.25
   delayPerElementAlpha: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   useScaleAnimation: 1
   scaleDelay: 0
-  scaleDuration: 0.25
+  scaleDuration: 0.1
   delayPerElementScale: 0
   offsetScale: {x: 0, y: 0}
   curveScale:
