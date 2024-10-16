@@ -1,31 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public RhythmManager rhythmManager;
-
-    public Timer timer;
-
-    public float boundary = 0.5f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public Vector3 mousePos;
+    public Vector3 point;
+    public Camera mainCam;
+    
+    public delegate void PlayerAddNailEvent();
+    public event PlayerAddNailEvent playerAddNailEvent;
+    
+    
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            //if timer.currentTime = rhythm point value + or - boundary
+            RaycastHit hitInfo;
+            if (Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hitInfo))
             {
-                //event -> change state to hitstate
+                
+                if (hitInfo.collider != null)
+                {
+                    mousePos = Input.mousePosition;
+                    point = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
+                
+                    Debug.Log("nail");
+                    Debug.Log(hitInfo.collider);
+                    
+
+                    if (playerAddNailEvent != null)
+                    {
+                        playerAddNailEvent.Invoke();
+                    }
+                    
+                }
+                
             }
+            
         }
         
-        
     }
+    
 }

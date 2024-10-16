@@ -29,11 +29,8 @@ public class SewingGameManager : MonoBehaviour
     [Button]
     void BeginGame()
     {
-        if (sewingGameStartEvent != null)
-        {
-            sewingGameStartEvent.Invoke();
-        }
-
+        sewingGameStartEvent?.Invoke();
+        
         StartCoroutine(waitToBegin());
         
     }
@@ -58,18 +55,12 @@ public class SewingGameManager : MonoBehaviour
             if (sewingScore > winThreshold)
             {
                 hasWon = true;
-                if (sewingGameEndEvent != null)
-                {
-                    sewingGameEndEvent.Invoke(hasWon);
-                }
+                sewingGameEndEvent?.Invoke(hasWon);
             }
             else
             {
                 hasWon = false;
-                if (sewingGameEndEvent != null)
-                {
-                    sewingGameEndEvent.Invoke(hasWon);
-                }
+                sewingGameEndEvent?.Invoke(hasWon);
             }
         }
         

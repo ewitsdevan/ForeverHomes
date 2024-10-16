@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nail : MonoBehaviour
+public class PowerGaugePos : MonoBehaviour
 {
-
     // Start is called before the first frame update
     void Start()
     {
