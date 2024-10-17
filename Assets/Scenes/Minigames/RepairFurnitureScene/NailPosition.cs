@@ -13,10 +13,10 @@ public class NailPosition : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.playerAddNailEvent += addNail;
+        playerInput.playerAddNailEvent += AddNail;
     }
 
-    private void addNail()
+    private void AddNail()
     {
         //Only allow player to play one nail
         nailPos = playerInput.point;
@@ -53,6 +53,6 @@ public class NailPosition : MonoBehaviour
     
     private void OnDisable()
     {
-        playerInput.playerAddNailEvent -= addNail;
+        playerInput.playerAddNailEvent -= AddNail;
     }
 }

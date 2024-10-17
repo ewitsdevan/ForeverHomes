@@ -160,6 +160,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3907a64fa255c47a4b4473540eb99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.12295724
+      value: -0.16130161
+      inSlope: 0.10732137
+      outSlope: 0.10732137
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.2819778
+      value: -0.16543539
+      inSlope: 0.08281495
+      outSlope: 0.08281495
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.34897783
+      value: -0.3348242
+      inSlope: 0.39522132
+      outSlope: 1.6701043
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.09753317
+    - serializedVersion: 3
+      time: 0.858959
+      value: 0.9918157
+      inSlope: 5.8421793
+      outSlope: -10.936337
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.14716081
+      outWeight: 0.3168093
+    - serializedVersion: 3
+      time: 0.89138126
+      value: 0.7674815
+      inSlope: 1.5596783
+      outSlope: 1.5596783
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.92435896
+      value: 0.99452186
+      inSlope: 9.792113
+      outSlope: -4.443866
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.4665175
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.95639616
+      value: 0.9315233
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.99871796
+      value: 0.99452186
+      inSlope: 2.7995014
+      outSlope: 2.7995014
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.8784973
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   nailPosition: {fileID: 0}
   duration: 1.25
   hitSpeed: 0.5
