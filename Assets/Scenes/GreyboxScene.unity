@@ -2032,7 +2032,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1174284865199508393, guid: e32e75ac073424ff3ba5e1b863f9ba4a, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 19f9adb0199b246d0b1450f751b43266, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2239,6 +2239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381594531}
   - component: {fileID: 381594532}
+  - component: {fileID: 381594533}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -2357,6 +2358,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &381594533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381594530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6aa1b8cfd46847e6a4fc01a72e45a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickClip: {fileID: 8300000, guid: 05d8ddca7dd5c40f7884346f9b6f9158, type: 3}
+  pageFlipClip: {fileID: 8300000, guid: 5ff1bbf6c989144e7ba6e256ca97cfde, type: 3}
 --- !u!1 &385292114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3979,6 +3994,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 381594533}
+        m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+        m_MethodName: PageFlipSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &687035516
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5458,7 +5485,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1315131951}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 20
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: -80
   m_OnValueChanged:
@@ -6630,6 +6657,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 381594533}
+        m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+        m_MethodName: PageFlipSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1053471359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6812,7 +6851,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 148259604}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 20
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: -80
   m_OnValueChanged:
@@ -9319,6 +9358,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 381594533}
+        m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+        m_MethodName: ButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!222 &1579693018
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11149,6 +11200,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 381594533}
+        m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+        m_MethodName: PageFlipSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &394118827585119201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11465,6 +11528,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4361518946546755325}
         m_TargetAssemblyTypeName: ButtonIconToggle, Assembly-CSharp
         m_MethodName: ToggleIcon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 381594533}
+        m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
+        m_MethodName: PageFlipSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
