@@ -7,7 +7,7 @@ using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using Unity.Mathematics;
 using Unity.VisualScripting;
-using UnityEditor.UI;
+using UnityEngine.UI;
 using UnityEngine;
 
 

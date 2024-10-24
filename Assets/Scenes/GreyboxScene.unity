@@ -12456,7 +12456,7 @@ MonoBehaviour:
   arrow: {fileID: 7856251857728652874}
   background: {fileID: 1152551690220988004}
   target: {fileID: 5508036678888596580}
-  arrowSpeed: 1
+  arrowSpeed: 2
   maxDistance: 1
 --- !u!33 &4870071349326721292
 MeshFilter:
@@ -12665,6 +12665,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2196626478895646061, guid: 6cb4fe6b576b65442baf36bb4f4bf513, type: 3}
     - target: {fileID: 8281173517443755231, guid: 3f19c0a0d2c34417e8018716fe8bc706, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8281173517443755231, guid: 3f19c0a0d2c34417e8018716fe8bc706, type: 3}
       propertyPath: failText
       value: 
       objectReference: {fileID: 1215018877}
@@ -12680,6 +12684,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1256131422}
+    - target: {fileID: 8281173517443755231, guid: 3f19c0a0d2c34417e8018716fe8bc706, type: 3}
+      propertyPath: rotateSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8281173517443755231, guid: 3f19c0a0d2c34417e8018716fe8bc706, type: 3}
       propertyPath: successText
       value: 

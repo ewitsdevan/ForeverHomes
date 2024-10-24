@@ -71,14 +71,11 @@ public class IsometricCamera : MonoBehaviour
 
     public void Reset()
     {
-        if (!bookOpen && !inMinigame)
-        {
-            bookOpen = false;
-            inMinigame = false;
-            _currentZoom = 7f;
-            transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(0, 0, 0, 0), 2 * Time.deltaTime);
-            _isReset = true;
-        }
+        bookOpen = false;
+        inMinigame = false;
+        _currentZoom = 7f;
+        transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(0, 0, 0, 0), 2 * Time.deltaTime);
+        _isReset = true;
     }
 
     public void Book()
@@ -103,7 +100,11 @@ public class IsometricCamera : MonoBehaviour
                 if (lastPos == transform.position || _startZoom == _currentZoom)
                 {
                     _timer = 0;
-                    Reset();
+
+                    if (!bookOpen && !inMinigame)
+                    {
+                        Reset();
+                    }
                 }
             }
             else if (lastPos != transform.position || _startZoom != _currentZoom)

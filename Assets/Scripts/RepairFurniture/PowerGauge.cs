@@ -31,6 +31,7 @@ public class PowerGauge : MonoBehaviour
 
     void Start()
     {
+        // Sets min/max points using size of bars
         minPoint.x = -background.rectTransform.rect.width / 2;
         maxPoint.x = background.rectTransform.rect.width / 2;
         minTarget.x = -target.rectTransform.rect.width / 2;
@@ -41,10 +42,11 @@ public class PowerGauge : MonoBehaviour
     }
     void Update()
     {
+        // Move arrow
         arrow.rectTransform.anchoredPosition += _nailTarget * (arrowSpeed * Time.deltaTime);
+        
+        // If distance between target (end of bar) is less than maxDistance, swap target (using arrow == target statement didn't work)
         distance = Mathf.Abs(_nailTarget.x - arrow.rectTransform.anchoredPosition.x);
-
-        //move arrow above gauge bar
         if (distance < maxDistance)
         {
             if (_nailTarget == maxPoint)

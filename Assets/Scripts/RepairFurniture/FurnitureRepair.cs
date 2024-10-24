@@ -14,12 +14,12 @@ public class FurnitureRepair : FurnitureBase
     private RaycastHit hitInfo;
     public GameObject[] nailPoints;
     
-    private Transform startPos;
+    private Vector3 startPos;
     public Vector3 objectRotation;
     public Vector3 cameraPosition;
     public float cameraZoom;
     public bool gameStarted;
-    public float speed;
+    public float rotateSpeed;
     public float viewSpeed;
     
     public float successfulHitCount;
@@ -36,6 +36,7 @@ public class FurnitureRepair : FurnitureBase
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;
+        startPos = gameObject.transform.position;
     }
     private void FixedUpdate()
     {
@@ -66,17 +67,17 @@ public class FurnitureRepair : FurnitureBase
 
     void SetCamera()
     {
-        // Lock player camera controls
+        // Disable player camera controls
         mainCamera.GetComponent<IsometricCamera>().inMinigame = true;
         
         //set new camera position for game
         mainCamera.transform.DOMove(cameraPosition, 0.4f).OnComplete(() =>
         {
-            // Zoom camera
+            // Zooms camera using existing camera system
             mainCamera.GetComponent<IsometricCamera>().minigameZoom = cameraZoom;
             
             //rotate chair
-            gameObject.transform.DOLocalRotate(objectRotation, speed).SetDelay(0.25f).OnComplete(BeginGame).SetEase(Ease.InOutBack);
+            gameObject.transform.DOLocalRotate(objectRotation, rotateSpeed).SetDelay(0.25f).OnComplete(BeginGame).SetEase(Ease.InOutBack);
         }).SetEase(Ease.OutSine);
     }
 
@@ -90,7 +91,7 @@ public class FurnitureRepair : FurnitureBase
         
         maxHitCount = nailPoints.Length;
         
-        // Show UI
+        // Show UI Panel
         minigamePanel.SetActive(true);
         
     }
@@ -117,6 +118,8 @@ public class FurnitureRepair : FurnitureBase
             {
                 //win game
                 Debug.Log("you have won");
+                
+                // Show success UI
                 gaugeMeter.SetActive(false);
                 tutorialPanel.SetActive(false);
                 successText.SetActive(true);
@@ -125,12 +128,16 @@ public class FurnitureRepair : FurnitureBase
             {
                 //lose game
                 Debug.Log("you have lost");
+                
+                // Show failure UI
                 gaugeMeter.SetActive(false);
                 tutorialPanel.SetActive(false);
                 failText.SetActive(true);
             }
             
-            //back to main scene
+            // Rotate chair back
+            gameObject.transform.DOLocalRotate(startPos, rotateSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
+            
         }
         
         //zoom camera back out
@@ -139,6 +146,19 @@ public class FurnitureRepair : FurnitureBase
     private void OnDisable()
     {
         PowerGauge.nailHitEvent -= NailHit;
+    }
+
+    void FinishGame()
+    {
+        // Reenables player camera controls via Reset
+        mainCamera.GetComponent<IsometricCamera>().Reset();
+        
+        // Reset and Disable UI
+        successText.SetActive(false);
+        failText.SetActive(false);
+        gaugeMeter.SetActive(false);
+        tutorialPanel.SetActive(true);
+        minigamePanel.SetActive(false);
     }
 
 
