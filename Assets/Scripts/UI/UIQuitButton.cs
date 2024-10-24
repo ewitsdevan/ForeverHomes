@@ -6,10 +6,23 @@ using UnityEngine;
 
 public class UIQuitButton : MonoBehaviour
 {
+    public GameObject book;
     // Quits Game
     public void Quit()
     {
         print("UIQuitButton: Quit");
         Application.Quit();
+    }
+
+    // Closes Book
+    public void Back()
+    {
+        StartCoroutine(DelayedDisable());
+    }
+
+    IEnumerator DelayedDisable()
+    {
+        yield return new WaitForSeconds(0.5f);
+        book.SetActive(false);
     }
 }
