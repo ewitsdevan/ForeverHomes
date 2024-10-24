@@ -1,3 +1,6 @@
+// Created by Maddie Thynne 23/10/2024
+// Updated by Devan Laczko 24/10/2024
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,14 +10,14 @@ using UnityEngine;
 public class FurnitureRepair : FurnitureBase
 {
 
-    public Camera mainCamera;
+    public GameObject mainCamera;
     private RaycastHit hitInfo;
     public GameObject[] nailPoints;
     
-
     private Transform startPos;
-    public Vector3 inGamePos;
-    public GameObject inGameCameraPos;
+    public Vector3 objectRotation;
+    public Vector3 cameraPosition;
+    public float cameraZoom;
     public bool gameStarted;
     public float speed;
     public float viewSpeed;
@@ -24,6 +27,12 @@ public class FurnitureRepair : FurnitureBase
     private float curHitCount;
     public float winThreshold;
 
+    public GameObject minigamePanel;
+    public GameObject gaugeMeter;
+    public GameObject tutorialPanel;
+    public GameObject successText;
+    public GameObject failText;
+
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;
@@ -32,7 +41,7 @@ public class FurnitureRepair : FurnitureBase
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition), out hitInfo) &&
+            if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo) &&
                 gameStarted == false)
             {
                 if (hitInfo.collider.GetComponentInParent<FurnitureBase>() != null)
@@ -47,24 +56,27 @@ public class FurnitureRepair : FurnitureBase
     public void Launch()
     {
         gameStarted = true;
-        //Get original camera position
-        mainCamera.enabled = true;
         //startPos = mainCamera.transform;
         
-        //rotate chair
-        gameObject.transform.DOLocalRotate(inGamePos, speed).OnComplete(SetCamera).SetEase(Ease.InOutBack);
+        // Reset Camera
+        mainCamera.GetComponent<IsometricCamera>().Reset();
+        
+        SetCamera();
     }
 
     void SetCamera()
     {
+        // Lock player camera controls
+        mainCamera.GetComponent<IsometricCamera>().inMinigame = true;
+        
         //set new camera position for game
-        mainCamera.transform.DOMove(inGameCameraPos.transform.position, 0.4f).SetDelay(0.2f).OnComplete(() =>
+        mainCamera.transform.DOMove(cameraPosition, 0.4f).OnComplete(() =>
         {
-            mainCamera.transform.DOLookAt(gameObject.transform.position, viewSpeed).OnComplete(() =>
-            {
-                BeginGame();
-                
-            }).SetEase(Ease.OutCirc);
+            // Zoom camera
+            mainCamera.GetComponent<IsometricCamera>().minigameZoom = cameraZoom;
+            
+            //rotate chair
+            gameObject.transform.DOLocalRotate(objectRotation, speed).SetDelay(0.25f).OnComplete(BeginGame).SetEase(Ease.InOutBack);
         }).SetEase(Ease.OutSine);
     }
 
@@ -77,6 +89,9 @@ public class FurnitureRepair : FurnitureBase
         }
         
         maxHitCount = nailPoints.Length;
+        
+        // Show UI
+        minigamePanel.SetActive(true);
         
     }
     
@@ -102,21 +117,23 @@ public class FurnitureRepair : FurnitureBase
             {
                 //win game
                 Debug.Log("you have won");
+                gaugeMeter.SetActive(false);
+                tutorialPanel.SetActive(false);
+                successText.SetActive(true);
             }
             else
             {
                 //lose game
                 Debug.Log("you have lost");
+                gaugeMeter.SetActive(false);
+                tutorialPanel.SetActive(false);
+                failText.SetActive(true);
             }
-
-            //set camera to original position
-
             
             //back to main scene
         }
         
         //zoom camera back out
-        mainCamera.enabled = true;
     }
 
     private void OnDisable()
