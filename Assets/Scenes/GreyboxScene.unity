@@ -1336,6 +1336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2730424216995594279, guid: 18e6487823cce8b458a68f5c49e79178, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c8b37c90a586ec84eaab7f1fc3fee671, type: 2}
     - target: {fileID: 4728015018807349523, guid: 18e6487823cce8b458a68f5c49e79178, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.09
@@ -8746,7 +8750,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1304777591
 MonoBehaviour:
   m_ObjectHideFlags: 0
