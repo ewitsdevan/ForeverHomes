@@ -12514,11 +12514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a66f409f45cee741ae37c65e1dc32f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 7856251857728652874}
-  background: {fileID: 1152551690220988004}
-  target: {fileID: 5508036678888596580}
-  arrowSpeed: 2
-  maxDistance: 5
 --- !u!33 &4870071349326721292
 MeshFilter:
   m_ObjectHideFlags: 0
