@@ -5,21 +5,19 @@ using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager2 : MonoBehaviour
 {
-    public TextMeshProUGUI textDialogue;
+    public TextMeshProUGUI textDialogue1;
     public string[] lines;
     public float speed;
     public GameObject dialogue; 
-    public GameObject grim;
-    public GameObject grim2;
  
 
     private int index;
   
     void Start()
     {
-       textDialogue.text = string.Empty;
+       textDialogue1.text = string.Empty;
        StartDialogue(); 
     }
 
@@ -28,17 +26,17 @@ public class DialogueManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))   
          {
-            if(textDialogue.text == lines[index]) 
+            if(textDialogue1.text == lines[index]) 
             { 
                 
-                NextLine();
+                NextLine1();
             
             }
             else 
             {
             
                 StopAllCoroutines();
-                textDialogue.text = lines[index];
+                textDialogue1.text = lines[index];
                 
 
             }
@@ -60,19 +58,19 @@ public class DialogueManager : MonoBehaviour
         foreach (char c in lines[index].ToCharArray())
         {
 
-            textDialogue.text += c;
+            textDialogue1.text += c;
             yield return new WaitForSeconds(speed);
 
 
         }
     }
 
-    void NextLine()
+    void NextLine1()
     {
         if (index < lines.Length - 1)
         {
             index++;
-            textDialogue.text = string.Empty;
+            textDialogue1.text = string.Empty;
             StartCoroutine(Sentence());
 
         }
@@ -80,7 +78,7 @@ public class DialogueManager : MonoBehaviour
         {
             //next scene
             dialogue.SetActive(false);
-            
+            SceneManager.LoadScene("Grim Book"); 
         }
 
     }

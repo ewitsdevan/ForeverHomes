@@ -122,6 +122,78 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &186687666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186687667}
+  - component: {fileID: 186687669}
+  - component: {fileID: 186687668}
+  m_Layer: 5
+  m_Name: Textbox (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &186687667
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186687666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1692696485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -517.59, y: 10}
+  m_SizeDelta: {x: 884.8143, y: 747.9126}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &186687668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186687666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 603c0e32a3a294546a9848ab93fe8886, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &186687669
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186687666}
+  m_CullTransparentMesh: 1
 --- !u!1 &301818460
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,8 +228,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.3942, y: -362}
-  m_SizeDelta: {x: 1649.4698, y: 196.2681}
+  m_AnchoredPosition: {x: -13.0288, y: -362}
+  m_SizeDelta: {x: 1646.7391, y: 196.2681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301818462
 MonoBehaviour:
@@ -363,7 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 592102121}
-  - component: {fileID: 592102120}
+  - component: {fileID: 592102122}
   m_Layer: 0
   m_Name: DialougeManager
   m_TagString: Untagged
@@ -371,29 +443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &592102120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592102119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f371f2664a3f84244aed8c3cae341dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDialogue: {fileID: 1439440080}
-  lines:
-  - You gain consciousness in what seems to be a black void.
-  - 'Unsure of what to do, you decided call out into the darkness.  '
-  - 'You: Hello?'
-  - 'You: Hello, Hello?'
-  - No response
-  speed: 0.02
-  dialogue: {fileID: 1439440077}
-  grim: {fileID: 1408427743}
-  grim2: {fileID: 0}
 --- !u!4 &592102121
 Transform:
   m_ObjectHideFlags: 0
@@ -409,6 +458,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592102122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592102119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48ac76169c4af147b25a675d624f698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDialogue1: {fileID: 1439440080}
+  lines:
+  - 'You: OH MY GOD'
+  - 'Skeleton: WRONG!!!'
+  - A skeleton person appears before you looking like a millennial tumblr-fied version
+    of the grim reaper
+  - They are adorned with a short black cloak, the hood resting on their shoulder
+    bones, with a blue grey turtleneck
+  - and an offensive colour of orange tie, pictured with tiny ghosts.
+  - 'You: What?'
+  - "Skeleton: You said \"oh my god!\", and I said wrong, like I was saying I wasn\u2019t-"
+  - "Grim: You know what, doesn\u2019t matter. HI! I\u2019m Grim."
+  - "They smile wide showing their smile, which is very toothy\u2026 obviously."
+  - "You: One- Don\u2019t you think that\u2019s a bit on the nose, two- AM I DEAD? "
+  - "Grim: Yes and Yes. Look, I got here like\u2026"
+  - They start to count on their boney fingers.
+  - 'Grim: 30 years ago? '
+  - "You:  But aren\u2019t you, like an ancient myth? "
+  - 'Grim: Technically yes, however, the old guy was doing this for thousands of
+    years and just went into retirement.'
+  - "Grim: I was the first soul he saw when planning his retirement and said, \u201CYeah
+    you\u2019ll do\u201D  "
+  - 'Grim: So.. Here I am! '
+  - 'You: Riight, so...'
+  - 'Now both standing in a very awkward silence, Grim takes off his hood. '
+  speed: 0.02
+  dialogue: {fileID: 1439440077}
 --- !u!1 &699101003
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +615,7 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1408427743
+--- !u!1 &811959721
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -535,59 +623,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1408427746}
-  - component: {fileID: 1408427745}
-  - component: {fileID: 1408427744}
+  - component: {fileID: 811959722}
+  - component: {fileID: 811959724}
+  - component: {fileID: 811959723}
   m_Layer: 5
-  m_Name: Grim
+  m_Name: Textbox (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1408427744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408427743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1408427745
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408427743}
-  m_CullTransparentMesh: 1
---- !u!224 &1408427746
+--- !u!224 &811959722
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408427743}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 811959721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -596,9 +649,44 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -574.3942, y: -104}
-  m_SizeDelta: {x: 489.0482, y: 473.5892}
+  m_AnchoredPosition: {x: 0.0099773, y: -0.0084839}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &811959723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811959721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9197595, g: 0.7971698, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 1f1a10583e92f4f4b8d618f168da2d6d, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &811959724
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811959721}
+  m_CullTransparentMesh: 1
 --- !u!1 &1439440077
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,8 +721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -715, y: -306}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -15.9233, y: -360.48718}
+  m_SizeDelta: {x: 1598.1537, y: 158.9644}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1439440079
 CanvasRenderer:
@@ -727,7 +815,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -11.24176, y: 0, z: -1414.2219, w: -116.91504}
+  m_margin: {x: -11.24176, y: 0, z: -2.6246338, w: 0.71806335}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -764,7 +852,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1408427746}
+  - {fileID: 811959722}
+  - {fileID: 186687667}
   - {fileID: 301818461}
   - {fileID: 1439440078}
   m_Father: {fileID: 0}
