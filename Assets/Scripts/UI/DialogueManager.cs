@@ -78,6 +78,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            //next scene
             dialogue.SetActive(false);
             
         }
