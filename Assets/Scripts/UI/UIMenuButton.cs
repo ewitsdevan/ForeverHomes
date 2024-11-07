@@ -49,8 +49,7 @@ public class UIMenuButton : MonoBehaviour
         }
 
         StartCoroutine(QuitButton());
-        StartCoroutine(DisableButtonWhileFlip(settingsButton));
-        StartCoroutine(DisableButtonWhileFlip(stickersButton));
+        StartCoroutine(DisableButtonWhileFlip());
     }
     
     public void StickersMenu()
@@ -80,7 +79,7 @@ public class UIMenuButton : MonoBehaviour
         }
 
         StartCoroutine(BackButton());
-        StartCoroutine(DisableButtonWhileFlip(settingsButton));
+        StartCoroutine(DisableButtonWhileFlip());
     }
     
     public void SettingsMenu()
@@ -109,7 +108,7 @@ public class UIMenuButton : MonoBehaviour
         }
         
         StartCoroutine(BackButton());
-        StartCoroutine(DisableButtonWhileFlip(stickersButton));
+        StartCoroutine(DisableButtonWhileFlip());
     }
 
     IEnumerator ChangeMenu(GameObject otherMenu, GameObject targetMenu, float speed)
@@ -155,26 +154,31 @@ public class UIMenuButton : MonoBehaviour
         if (right)
         {
             bookFlipper.GetComponent<AutoFlip>().FlipRightPage();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
             bookFlipper.GetComponent<AutoFlip>().FlipRightPage();
         }
         else
         {
             bookFlipper.GetComponent<AutoFlip>().FlipLeftPage();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.5f);
             bookFlipper.GetComponent<AutoFlip>().FlipLeftPage();
         }
     }
 
-    IEnumerator DisableButtonWhileFlip(GameObject targetButton)
+    IEnumerator DisableButtonWhileFlip()
     {
-        if (targetButton.activeSelf == true)
-        {
-            targetButton.GetComponent<Button>().interactable = false;
+        backButton.GetComponent<Button>().interactable = false;
+        quitButton.GetComponent<Button>().interactable = false;
+        closeButton.GetComponent<Button>().interactable = false;
+        settingsButton.GetComponent<Button>().interactable = false;
+        stickersButton.GetComponent<Button>().interactable = false;
             
-            yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.75f);
             
-            targetButton.GetComponent<Button>().interactable = true;
-        }
+        backButton.GetComponent<Button>().interactable = true;
+        quitButton.GetComponent<Button>().interactable = true;
+        closeButton.GetComponent<Button>().interactable = true;
+        settingsButton.GetComponent<Button>().interactable = true;
+        stickersButton.GetComponent<Button>().interactable = true;
     }
 }
