@@ -1,5 +1,7 @@
 // Created by Devan Laczko 25/10/2024
+// Updated 07/11/2024
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +10,7 @@ public class UIStartAnimation : MonoBehaviour
 {
     public bool triggerOnStart;
     public UIAutoAnimation[] animationList;
+    public float delayStart;
     public float delayBetween;
 
     private int i;
@@ -23,7 +26,7 @@ public class UIStartAnimation : MonoBehaviour
 
     public void EntranceAnimation()
     {
-        StartCoroutine(AnimateEntrance(delayBetween));
+        StartCoroutine(DelayStart(delayStart));
     }
 
     public void QuickEntranceAnimation()
@@ -31,13 +34,19 @@ public class UIStartAnimation : MonoBehaviour
         StartCoroutine(AnimateEntrance(0));
     }
 
+    IEnumerator DelayStart(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(AnimateEntrance(delayBetween));
+    }
+
     IEnumerator AnimateEntrance(float delay)
     {
         if (i < animationList.Length)
         {
-            yield return new WaitForSeconds(delay);
             animationList[i].gameObject.SetActive(true);
             animationList[i].EntranceAnimation();
+            yield return new WaitForSeconds(delay);
             i++;
             StartCoroutine(AnimateEntrance(delay));
         }

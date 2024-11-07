@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: a7bca2b19da424faebc3e7d6e812cb1a
   - enabled: 1
+    path: Assets/Scenes/GreyboxScene.unity
+    guid: 9f72a5dfe81384ee581790a6f9e66a11
+  - enabled: 1
     path: Assets/Scenes/Opening Narrative/Opening.unity
     guid: ec2ac5cd839120943b643fdbd42c6989
   - enabled: 1
@@ -16,13 +19,10 @@ EditorBuildSettings:
     guid: 81a4ed10ecc0c2c4caeba3f5c2e5849e
   - enabled: 1
     path: Assets/Scenes/Opening Narrative/Grim Meet (Hood Off).unity
-    guid: dfbcb7edd3a1e794dadfbf9622e68522
+    guid: 68213b6dd624b154f901416b411aa047
   - enabled: 1
     path: Assets/Scenes/Opening Narrative/Grim Book.unity
-    guid: 75fbb81e25880aa45ad40af8c57e23da
-  - enabled: 0
-    path: Assets/Scenes/GreyboxScene.unity
-    guid: 9f72a5dfe81384ee581790a6f9e66a11
+    guid: 45a64955d5f353644a38c3ab52e36741
   - enabled: 0
     path: Assets/Scenes/Minigames/CleaningScene.unity
     guid: b84660c98b5b9dc47aa2dacd957bbfed

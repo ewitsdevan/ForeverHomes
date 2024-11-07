@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 30/09/2024
-// Updated 16/10/2024
+// Updated 07/11/2024
 
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +18,7 @@ public class UIMenuButton : MonoBehaviour
     public GameObject stickersButton;
     public GameObject settingsButton;
     public GameObject quitButton;
+    public GameObject closeButton;
     
     public void MainMenu()
     {
@@ -126,8 +127,10 @@ public class UIMenuButton : MonoBehaviour
         if (backButton.activeSelf == false)
         {
             quitButton.GetComponent<UIAutoAnimation>().ExitAnimation();
+            closeButton.GetComponent<UIAutoAnimation>().ExitAnimation();
             yield return new WaitForSeconds(0.5f);
             quitButton.SetActive(false);
+            closeButton.SetActive(false);
             backButton.SetActive(true);
             backButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
         }
@@ -141,7 +144,9 @@ public class UIMenuButton : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             backButton.SetActive(false);
             quitButton.SetActive(true);
+            closeButton.SetActive(true);
             quitButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            closeButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
         }
     }
 

@@ -8338,7 +8338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ce03783b236498f9d09acfc69961dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  book: {fileID: 0}
+  book: {fileID: 1205544798}
 --- !u!114 &1053471357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9334,7 +9334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1205544799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11828,7 +11828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ce03783b236498f9d09acfc69961dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  book: {fileID: 0}
+  book: {fileID: 1205544798}
 --- !u!114 &1579693020
 MonoBehaviour:
   m_ObjectHideFlags: 0
