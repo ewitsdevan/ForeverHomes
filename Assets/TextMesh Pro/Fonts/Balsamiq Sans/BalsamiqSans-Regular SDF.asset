@@ -1078,6 +1078,21 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 328
+    m_Metrics:
+      m_Width: 9.546875
+      m_Height: 65.25
+      m_HorizontalBearingX: 4.40625
+      m_HorizontalBearingY: 64.625
+      m_HorizontalAdvance: 18.453125
+    m_GlyphRect:
+      m_X: 570
+      m_Y: 437
+      m_Width: 10
+      m_Height: 66
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   - m_Index: 330
     m_Metrics:
       m_Width: 23.125
@@ -1543,21 +1558,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 328
-    m_Metrics:
-      m_Width: 9.546875
-      m_Height: 65.25
-      m_HorizontalBearingX: 4.40625
-      m_HorizontalBearingY: 64.625
-      m_HorizontalAdvance: 18.453125
-    m_GlyphRect:
-      m_X: 570
-      m_Y: 437
-      m_Width: 10
-      m_Height: 66
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -1864,6 +1864,10 @@ MonoBehaviour:
     m_GlyphIndex: 334
     m_Scale: 1
   - m_ElementType: 1
+    m_Unicode: 124
+    m_GlyphIndex: 328
+    m_Scale: 1
+  - m_ElementType: 1
     m_Unicode: 125
     m_GlyphIndex: 335
     m_Scale: 1
@@ -1958,10 +1962,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 64258
     m_GlyphIndex: 270
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 124
-    m_GlyphIndex: 328
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 662658762382891586}
@@ -2860,7 +2860,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - UNDERLAY_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -2940,7 +2941,7 @@ Material:
     - _UnderlayDilate: 0
     - _UnderlayOffsetX: 0
     - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
+    - _UnderlaySoftness: 1
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
     - _WeightBold: 0.75
@@ -2949,7 +2950,7 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0, g: 1, b: 0, a: 0.5}
+    - _GlowColor: {r: 0, g: 0, b: 0, a: 0.5882353}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
