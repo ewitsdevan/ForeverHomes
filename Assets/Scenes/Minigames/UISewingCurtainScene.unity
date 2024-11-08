@@ -2609,10 +2609,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When all lights turn green, use  MOVE to stay on the line.
+  m_text: 'When all lights turn green, use MOVE to stay on the line as it passes
+    through the machine.
 
-    Get to
-    the end to successfully complete the minigame.'
+    Get to the end to complete the minigame.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
   m_sharedMaterial: {fileID: 8555710805152590933, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
