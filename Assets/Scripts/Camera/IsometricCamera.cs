@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 03/10/2024
-// Updated 04/10/2024
+// Updated 09/1`/2024
 
 using System.Collections;
 using System.Collections.Generic;
@@ -43,13 +43,11 @@ public class IsometricCamera : MonoBehaviour
         if (!inMinigame)
         {
             _panPosition = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            _currentZoom = Mathf.Clamp(_currentZoom - Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime, minZoom,
-                maxZoom);
-            _camera.orthographicSize =
-                Mathf.Lerp(_camera.orthographicSize, _currentZoom, zoomSmoothness * Time.deltaTime);
 
             if (_isReset && !bookOpen  && !inMinigame)
             {
+                _camera.orthographicSize =
+                    Mathf.Lerp(_camera.orthographicSize, _currentZoom, zoomSmoothness * Time.deltaTime);
                 transform.position += -transform.position * (panSpeed * Time.deltaTime);
                 if (transform.position == _startPosition)
                     _isReset = false;
@@ -60,6 +58,10 @@ public class IsometricCamera : MonoBehaviour
                                       new Vector3(_panPosition.x, 0, _panPosition.y) * (panSpeed * Time.deltaTime);
                 transform.position = new Vector3(Mathf.Clamp(transform.position.x, panLimitX.x, panLimitX.y),
                     transform.position.y, Mathf.Clamp(transform.position.z, panLimitZ.x, panLimitZ.y));
+                _currentZoom = Mathf.Clamp(_currentZoom - Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime, minZoom,
+                    maxZoom);
+                _camera.orthographicSize =
+                    Mathf.Lerp(_camera.orthographicSize, _currentZoom, zoomSmoothness * Time.deltaTime);
             }
         }
         else if (inMinigame)
@@ -78,11 +80,14 @@ public class IsometricCamera : MonoBehaviour
         _isReset = true;
     }
 
-    public void Book()
+    public void OpenBook()
     {
         bookOpen = true;
-        transform.position = Vector3.Lerp(transform.position, Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0) * new Vector3(0, 0, 25), panSpeed * Time.deltaTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, new Quaternion(-20, 0, -20, 0), 2 * Time.deltaTime);
+    }
+
+    public void CloseBook()
+    {
+        bookOpen = false;
     }
 
     IEnumerator ResetTimer()

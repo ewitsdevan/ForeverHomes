@@ -44,7 +44,7 @@ MonoBehaviour:
   positionDelay: 0
   positionDuration: 0.25
   delayPerElementPosition: 0
-  offsetPosition: {x: 100, y: 0}
+  offsetPosition: {x: 150, y: 0}
   curvePosition:
     serializedVersion: 2
     m_Curve:

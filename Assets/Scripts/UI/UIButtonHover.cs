@@ -1,28 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-public class UIButtonHover : MonoBehaviour
+public class UIButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public SOAnimationPresets originalPreset;
-    public SOAnimationPresets tempPreset;
-    
-    // Start is called before the first frame update
-    void Start()
+    public float offset;
+    private Vector3 startPos;
+
+    public void Awake()
     {
-        
+        startPos = gameObject.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        //startPos = gameObject.transform.position;
+
+        if (gameObject.GetComponent<Button>().interactable)
+        {
+            gameObject.transform.position += new Vector3(offset, 0, 0);
+        }
     }
 
-    void OnSelect(BaseEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
-        
+        if (gameObject.GetComponent<Button>().interactable)
+        {
+            gameObject.transform.position = startPos;
+        }
     }
 }

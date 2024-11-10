@@ -22,12 +22,17 @@ public class UILoading : MonoBehaviour
 
     public void LoadGameScene()
     {
-        StartCoroutine(LoadScene("GreyboxScene"));
+        StartCoroutine(LoadScene("GameScene"));
     }
 
     public void LoadMenuScene()
     {
         StartCoroutine(LoadScene("MenuScene"));
+    }
+    
+    public void LoadOpenScene()
+    {
+        StartCoroutine(LoadScene("Opening"));
     }
 
     IEnumerator LoadScene(string sceneName)
