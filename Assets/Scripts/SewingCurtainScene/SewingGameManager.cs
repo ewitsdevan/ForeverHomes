@@ -27,7 +27,7 @@ public class SewingGameManager : MonoBehaviour
     public event SewingGameEndEvent sewingGameEndEvent;
 
     [Button]
-    void BeginGame()
+    public void BeginGame()
     {
         sewingGameStartEvent?.Invoke();
         
