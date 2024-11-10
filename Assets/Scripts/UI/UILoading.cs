@@ -35,6 +35,11 @@ public class UILoading : MonoBehaviour
         StartCoroutine(LoadScene("Opening"));
     }
 
+    public void LoadSewingMinigame()
+    {
+        StartCoroutine(LoadScene("UISewingCurtainScene"));
+    }
+
     IEnumerator LoadScene(string sceneName)
     {
         gameObject.GetComponent<UIAutoAnimation>().EntranceAnimation();
