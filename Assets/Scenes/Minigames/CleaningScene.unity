@@ -154,9 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48583db5672d0cd40a8b983b1377cce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtMask: {fileID: 2800000, guid: b783a22809970ca45bb719e73619e23d, type: 3}
-  dirtBrush: {fileID: 2800000, guid: 80d9d678ed3a745499609976b7fe3a50, type: 3}
+  dirtMaskOG: {fileID: 2800000, guid: b783a22809970ca45bb719e73619e23d, type: 3}
+  dirtBrush: {fileID: 2800000, guid: 2ac4802c57adaf349a3f95b058c94366, type: 3}
   mainCam: {fileID: 595465885}
+  material: {fileID: 2100000, guid: ac3888a3b6ca0ce418de1f566019c37b, type: 2}
+  dirtAmount: 0
+  dirtThreshold: 30000
 --- !u!64 &141343094
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -199,7 +202,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 1cfa899a8e6303148a397941ca13ea19, type: 3}
+  - {fileID: 2100000, guid: ac3888a3b6ca0ce418de1f566019c37b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
