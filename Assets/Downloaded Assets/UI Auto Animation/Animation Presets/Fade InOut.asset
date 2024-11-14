@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09becc92ca7be05459bdfa3f9c10c5b0, type: 3}
   m_Name: Fade InOut
   m_EditorClassIdentifier: 
-  description: Describe how this animation looks like...
   useAlphaAnimation: 1
   alphaDelay: 0
   alphaDuration: 0.4
@@ -45,7 +44,7 @@ MonoBehaviour:
   positionDelay: 0
   positionDuration: 0.5
   delayPerElementPosition: 0.2
-  offsetPosition: {x: 0, y: 0}
+  offsetPosition: {x: 5, y: 0}
   curvePosition:
     serializedVersion: 2
     m_Curve:
@@ -128,3 +127,5 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  autoTrigger: 0
+  autoTriggerTimer: 5

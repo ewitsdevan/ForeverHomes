@@ -32,7 +32,7 @@ public class UILoading : MonoBehaviour
     
     public void LoadOpenScene()
     {
-        StartCoroutine(LoadScene("Opening"));
+        StartCoroutine(LoadScene("OpenScene"));
     }
 
     public void LoadSewingMinigame()
