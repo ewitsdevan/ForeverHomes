@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b783a22809970ca45bb719e73619e23d
+guid: d63f57920cf61a04a88718a9ec48977a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -13,8 +13,8 @@ TextureImporter:
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
     alphaTestReferenceValue: 0.5
-    mipMapFadeDistanceStart: 2
-    mipMapFadeDistanceEnd: 4
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
@@ -40,7 +40,7 @@ TextureImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
-  nPOTScale: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
   spriteMode: 0
@@ -71,7 +71,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0

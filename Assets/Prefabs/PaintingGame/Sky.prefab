@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 11b108eca6436714eb853cdc14a405ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 8542918755769350294}
   - component: {fileID: 2894120215861418804}
   - component: {fileID: 5475276057666003986}
+  - component: {fileID: 9132738542624136791}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -180,10 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e730db7de3bfac48932688acc92f2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  colouredObj: {fileID: 21300000, guid: b7b36708c94c42942a2dc3773c49e961, type: 3}
-  greyObj: {fileID: 21300000, guid: db20f0515005f534a8e825ef51ceb44e, type: 3}
-  spriteRenderer: {fileID: 5277113135727744167}
   objectName: 2
   objCollider: {fileID: 1492659222295937847}
   meshCollider: {fileID: 5475276057666003986}
@@ -209,3 +206,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &9132738542624136791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296778978232393540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48583db5672d0cd40a8b983b1377cce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirtMaskOG: {fileID: 2800000, guid: 1d18f284e8cd8804cba14002b08befd1, type: 3}
+  dirtBrush: {fileID: 2800000, guid: d63f57920cf61a04a88718a9ec48977a, type: 3}
+  mainCam: {fileID: 0}
+  material: {fileID: 2100000, guid: 11b108eca6436714eb853cdc14a405ef, type: 2}
+  dirtAmount: 0
+  dirtThreshold: 550000
+  isClean: 0

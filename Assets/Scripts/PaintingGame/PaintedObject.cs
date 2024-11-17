@@ -4,12 +4,6 @@ using UnityEngine;
 public class PaintedObject : MonoBehaviour
 {
 
-    public Camera cam;
-    public Sprite colouredObj;
-    public Sprite greyObj;
-
-    public SpriteRenderer spriteRenderer;
-
     public int objectName;
 
     public Collider2D objCollider;
@@ -21,6 +15,7 @@ public class PaintedObject : MonoBehaviour
     //grass = 0
     //flower = 1
     //sky = 2
+    
     private void Start()
     {
         Mesh mesh = objCollider.CreateMesh(true, true);
@@ -29,17 +24,6 @@ public class PaintedObject : MonoBehaviour
         
     }
 
-    public void ColourMe()
-    {
-        spriteRenderer.sprite = colouredObj;
-    }
 
-    public void UnColourMe()
-    {
-        spriteRenderer.sprite = greyObj;
-    }
-    
-    
-    
-    
+
 }

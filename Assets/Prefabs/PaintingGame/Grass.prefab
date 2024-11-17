@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1732632907959786746}
   - component: {fileID: 8081120988937207507}
   - component: {fileID: 6463814704306415155}
+  - component: {fileID: 360634033390114049}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -46,10 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e730db7de3bfac48932688acc92f2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  colouredObj: {fileID: 21300000, guid: 2cc4f1dcdc0db8c4d82cac19df263d3d, type: 3}
-  greyObj: {fileID: 21300000, guid: ca479e30e1a662d488b0ad2bd3d0585e, type: 3}
-  spriteRenderer: {fileID: 8344319827517602103}
   objectName: 0
   objCollider: {fileID: 293593011177607691}
   meshCollider: {fileID: 6463814704306415155}
@@ -75,6 +72,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &360634033390114049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806678670231861992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48583db5672d0cd40a8b983b1377cce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirtMaskOG: {fileID: 2800000, guid: f91f55868ccf55b488876fd6253dde08, type: 3}
+  dirtBrush: {fileID: 2800000, guid: d63f57920cf61a04a88718a9ec48977a, type: 3}
+  mainCam: {fileID: 0}
+  material: {fileID: 2100000, guid: f6505f3c68cab234291ce76f79c840e8, type: 2}
+  dirtAmount: 0
+  dirtThreshold: 25000
+  isClean: 0
 --- !u!1 &8325241896618997492
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +144,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f6505f3c68cab234291ce76f79c840e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

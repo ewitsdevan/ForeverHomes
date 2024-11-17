@@ -1,37 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Painting : MonoBehaviour
 {
 
-   public GameObject grass;
-   public GameObject flower;
-   public GameObject sky;
+   public CleanableObj grass;
+   public CleanableObj flower;
+   public CleanableObj sky;
+
+   public GameObject paintInput;
 
    public int selectedColour;
-   
-   private Color[] colours = new Color[3];
-   
+
    private  RaycastHit hitInfo;
    
    public Camera cam;
+   
 
    private void Start()
    {
-      /*
-      colours[0] = new Color(128, 158, 232); //Sky
-      colours[1] = new Color(88, 158, 55); //Grass
-      colours[2] = new Color(220, 141, 178); //Flower
-      */
+      sky.enabled = false;
+      grass.enabled = false;
+      flower.enabled = false;
 
    }
    private void Update()
    {
       if(Input.GetMouseButtonDown(0))
       {
-        
+        paintInput.SetActive(false);
          if(Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hitInfo))
          {
             if (hitInfo.collider.GetComponentInChildren<PaintedObject>() != null)
@@ -39,6 +35,7 @@ public class Painting : MonoBehaviour
                //Debug.Log("Test");
                int selectedObj = hitInfo.collider.GetComponentInChildren<PaintedObject>().objectName;
                CanWeColour(selectedObj);
+               paintInput.SetActive(true);
             }
 
          }
@@ -51,18 +48,55 @@ public class Painting : MonoBehaviour
    {
       if (selectedObj == selectedColour)
       {
-         //Debug.Log("Can paint");
-         hitInfo.collider.GetComponentInChildren<PaintedObject>().ColourMe();
+         sky.enabled = false;
+         grass.enabled = false;
+         flower.enabled = false;
          
-         
+         if(selectedObj == 0)
+         {
+            grass.enabled = true;
+
+            if (grass.isClean == true)
+            {
+               WinCheck();
+            }
+            
+         }
+
+         if (selectedObj == 1)
+         {
+            flower.enabled = true;
+            
+            if (flower.isClean == true)
+            {
+               WinCheck();
+            }
+         }
+
+         if (selectedObj == 2)
+         {
+            sky.enabled = true;
+            
+            if (sky.isClean == true)
+            {
+               WinCheck();
+            }
+         }
       }
       else
       {
          //not able to paint, add particle effect?
       }
-      
+
    }
-   
+
+   void WinCheck()
+   {
+      if (grass.isClean == true && flower.isClean == true && sky.isClean == true)
+      {
+         Debug.Log("Win");
+      }
+   }
    
    
    

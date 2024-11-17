@@ -20,6 +20,8 @@ public class CleanableObj : MonoBehaviour
     private float dirtAmountTotal;
     public float dirtThreshold;
 
+    public bool isClean = false;
+
     private void Start()
     {
         CreateTexture();
@@ -97,7 +99,7 @@ public class CleanableObj : MonoBehaviour
 
         if (dirtAmount < dirtThreshold)
         {
-            Debug.Log("Game Over");
+            isClean = true;
         }
         
     }
