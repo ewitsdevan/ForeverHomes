@@ -14,7 +14,11 @@ public class Painting : MonoBehaviour
    private  RaycastHit hitInfo;
    
    public Camera cam;
-   
+
+   public delegate void PaintingGameEndEvent(bool hasWon);
+
+   public event PaintingGameEndEvent paintingGameEndEvent;
+
 
    private void Start()
    {
@@ -94,7 +98,7 @@ public class Painting : MonoBehaviour
    {
       if (grass.isClean == true && flower.isClean == true && sky.isClean == true)
       {
-         Debug.Log("Win");
+         paintingGameEndEvent?.Invoke(true);
       }
    }
    

@@ -15,6 +15,10 @@ public class RepairFurnitureManager : MonoBehaviour
     private float curHitCount;
     public float winThreshold;
 
+    public delegate void RepairGameEndEvent(bool hasWon);
+
+    public event RepairGameEndEvent repairGameEndEvent;
+
 
     private void OnEnable()
     {
@@ -42,13 +46,11 @@ public class RepairFurnitureManager : MonoBehaviour
             //finish game
             if (successfulHitCount >= winThreshold)
             {
-                //win game
-                Debug.Log("you have won");
+                repairGameEndEvent?.Invoke(true);
             }
             else
             {
-                //lose game
-                Debug.Log("you have lost");
+                repairGameEndEvent?.Invoke(false);
             }
 
             playerInput.enabled = false;
