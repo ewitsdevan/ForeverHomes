@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8443385045758984090}
   - component: {fileID: 6732904909388343132}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: PaintInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
