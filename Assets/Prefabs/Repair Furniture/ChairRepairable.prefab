@@ -20173,6 +20173,7 @@ GameObject:
   - component: {fileID: 1325746030737626608}
   - component: {fileID: 3947669818638290429}
   - component: {fileID: 8311622742132614358}
+  - component: {fileID: 948385091345292883}
   m_Layer: 0
   m_Name: NailPoint (1)
   m_TagString: Untagged
@@ -20238,18 +20239,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 2628599838696808039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 2079695354108708660}
-  IdleNail: {fileID: 3053583300763072961}
-  SuccessNail: {fileID: 4238303789822973019}
-  FailNail: {fileID: 5842544215598211546}
-  nailCollider: {fileID: 3947669818638290429}
-  prompt: {fileID: 3703568345859509211}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &948385091345292883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628599838696808039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &2698024080918259986
@@ -25601,6 +25625,7 @@ GameObject:
   - component: {fileID: 1940093705530764959}
   - component: {fileID: 318926693705090427}
   - component: {fileID: 2412712741716687570}
+  - component: {fileID: 1034000345534139723}
   m_Layer: 0
   m_Name: NailPoint (3)
   m_TagString: Untagged
@@ -25666,18 +25691,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 4205601707236507447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 6891546633125021442}
-  IdleNail: {fileID: 8639280147121976671}
-  SuccessNail: {fileID: 8255728120705652215}
-  FailNail: {fileID: 7153387227213040992}
-  nailCollider: {fileID: 318926693705090427}
-  prompt: {fileID: 4185315820351222249}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &1034000345534139723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205601707236507447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &4238303789822973019
@@ -25724,6 +25772,7 @@ GameObject:
   - component: {fileID: 6665187064886170298}
   - component: {fileID: 1408823273623191775}
   - component: {fileID: 4017350979642765166}
+  - component: {fileID: 6024638832424605172}
   m_Layer: 0
   m_Name: NailPoint (5)
   m_TagString: Untagged
@@ -25789,18 +25838,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 4283562435013189560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 3525986834951560385}
-  IdleNail: {fileID: 2698024080918259986}
-  SuccessNail: {fileID: 3306731786787420687}
-  FailNail: {fileID: 2421890182409584557}
-  nailCollider: {fileID: 1408823273623191775}
-  prompt: {fileID: 7523277065859846260}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &6024638832424605172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283562435013189560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &4472795909090340953
@@ -30933,6 +31005,7 @@ GameObject:
   - component: {fileID: 5027801696434803201}
   - component: {fileID: 802074121957135722}
   - component: {fileID: 7296102344658074270}
+  - component: {fileID: 3594403417866701112}
   m_Layer: 0
   m_Name: NailPoint (6)
   m_TagString: Untagged
@@ -30998,18 +31071,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 4813854137990048153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 5693501310687336452}
-  IdleNail: {fileID: 1534199329096759151}
-  SuccessNail: {fileID: 8763698030478320005}
-  FailNail: {fileID: 5097610004317636704}
-  nailCollider: {fileID: 802074121957135722}
-  prompt: {fileID: 3939538439129497148}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &3594403417866701112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813854137990048153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &4944255160328304076
@@ -31024,6 +31120,7 @@ GameObject:
   - component: {fileID: 8677194444841988171}
   - component: {fileID: 597627480093663158}
   - component: {fileID: 9116187076354349739}
+  - component: {fileID: 381991374917289492}
   m_Layer: 0
   m_Name: NailPoint
   m_TagString: Untagged
@@ -31089,18 +31186,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 4944255160328304076}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 7044567167214683091}
-  IdleNail: {fileID: 8726110951104085015}
-  SuccessNail: {fileID: 2292123924049134268}
-  FailNail: {fileID: 4640613440253518105}
-  nailCollider: {fileID: 597627480093663158}
-  prompt: {fileID: 5942824623213201769}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &381991374917289492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944255160328304076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &5009801275824611317
@@ -36617,7 +36737,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5941239414927921888}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36640,37 +36760,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5941239414927921888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77bd678c7b2adb644b73b835a6ef7d7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3b7a084df66ed44b590e60354f6f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
-  mainCamera: {fileID: 0}
-  nailPoints:
-  - {fileID: 4944255160328304076}
-  - {fileID: 2628599838696808039}
-  - {fileID: 7076625767969592689}
-  - {fileID: 4205601707236507447}
-  - {fileID: 7079777529404779450}
-  - {fileID: 4283562435013189560}
-  - {fileID: 4813854137990048153}
-  - {fileID: 7383350951080290080}
-  objectRotation: {x: -125, y: 135, z: -15}
-  cameraPosition: {x: 0, y: -1.25, z: -5.75}
-  cameraZoom: 0.75
-  gameStarted: 0
-  speed: 1
-  viewSpeed: 0.65
+  nailPosition: {fileID: 0}
+  playerInput: {fileID: 0}
   successfulHitCount: 0
   maxHitCount: 0
-  winThreshold: 5
+  winThreshold: 0
 --- !u!1 &6556405134822740748
 GameObject:
   m_ObjectHideFlags: 0
@@ -37109,6 +37206,7 @@ GameObject:
   - component: {fileID: 2861353108414306151}
   - component: {fileID: 4916932924471770571}
   - component: {fileID: 1169433687158702449}
+  - component: {fileID: 5913259967326910252}
   m_Layer: 0
   m_Name: NailPoint (2)
   m_TagString: Untagged
@@ -37174,18 +37272,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 7076625767969592689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 1068200753628814062}
-  IdleNail: {fileID: 3512842978886804069}
-  SuccessNail: {fileID: 147685505665455428}
-  FailNail: {fileID: 69313390195675590}
-  nailCollider: {fileID: 4916932924471770571}
-  prompt: {fileID: 3525189861135522112}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &5913259967326910252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076625767969592689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &7079777529404779450
@@ -37200,6 +37321,7 @@ GameObject:
   - component: {fileID: 5094275651602880737}
   - component: {fileID: 3017900037010783158}
   - component: {fileID: 5462865272428267405}
+  - component: {fileID: 3388827392675851732}
   m_Layer: 0
   m_Name: NailPoint (4)
   m_TagString: Untagged
@@ -37265,18 +37387,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 7079777529404779450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 7680857256006268879}
-  IdleNail: {fileID: 3945972091861287440}
-  SuccessNail: {fileID: 6990395621442704474}
-  FailNail: {fileID: 2597285581451277091}
-  nailCollider: {fileID: 3017900037010783158}
-  prompt: {fileID: 7854473233303933908}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &3388827392675851732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7079777529404779450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &7153387227213040992
@@ -42303,6 +42448,7 @@ GameObject:
   - component: {fileID: 7355271999191564524}
   - component: {fileID: 2052639359068191315}
   - component: {fileID: 6212064745048388211}
+  - component: {fileID: 6411729027636001162}
   m_Layer: 0
   m_Name: NailPoint (7)
   m_TagString: Untagged
@@ -42368,18 +42514,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 7383350951080290080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7eb7038adb0c6b4d807260bb8333a36, type: 3}
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hammer: {fileID: 0}
   powerGauge: {fileID: 0}
   hammerPrefab: {fileID: 0}
-  hammerPos: {fileID: 2239873302063530044}
-  IdleNail: {fileID: 9030071493750526965}
-  SuccessNail: {fileID: 7997524029517952054}
-  FailNail: {fileID: 9132917462612954922}
-  nailCollider: {fileID: 2052639359068191315}
-  prompt: {fileID: 6763152877209839278}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
+  inputEnabled: 0
+  speed: 0
+--- !u!114 &6411729027636001162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7383350951080290080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7a4d1048c1972459f5253dbdaddfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hammer: {fileID: 0}
+  powerGauge: {fileID: 0}
+  hammerPrefab: {fileID: 0}
+  hammerPos: {fileID: 0}
+  IdleNail: {fileID: 0}
+  SuccessNail: {fileID: 0}
+  FailNail: {fileID: 0}
+  nailCollider: {fileID: 0}
+  prompt: {fileID: 0}
   inputEnabled: 0
   speed: 0
 --- !u!1 &7526764447058771143
