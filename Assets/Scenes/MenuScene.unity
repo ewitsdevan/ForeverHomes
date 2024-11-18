@@ -2234,7 +2234,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2067701762}
         m_TargetAssemblyTypeName: UILoading, Assembly-CSharp
-        m_MethodName: LoadGameScene
+        m_MethodName: LoadOpenScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

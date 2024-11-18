@@ -915,11 +915,11 @@ MonoBehaviour:
   loadingScreen: {fileID: 68767546}
   dialogues:
   - lines:
-    - You gain consciousness in what seems to be a black void.
-    - 'Unsure of what to do, you decided call out into the darkness.  '
+    - <i>You gain consciousness in what seems to be a black void.</i>
+    - <i>Unsure of what to do, you decided call out into the darkness.</i>
     - 'You: Hello?'
     - 'You: Hello, Hello?'
-    - No response
+    - <i>No response</i>
     - You decide to give it one more go, with more oomph
     - 'You: IS SOMEONE THERE?'
     - 'You: ANYONE?'
@@ -949,11 +949,43 @@ MonoBehaviour:
     - 'You: Riight, so...'
     - 'Now both standing in a very awkward silence, Grim takes off his hood. '
   - lines:
-    - Part 3
-    - 
+    - 'You: What now?'
+    - "Grim\u2019s eyes light up"
+    - 'Grim: OH YEAH! I need someone to help me renovate this house.'
+    - 'Grim: You have been selected by me to assist.  '
+    - "Grim: And totally because you\u2019re not the first person I have seen today. "
+    - "You: Huh? What do you mean \u201Crenovate\u201D? "
+    - 'Grim: So the reaping business is not what it used to be. The whole, scythe
+      and ever looming dark presence was really killing our image,'
+    - 'Grim: so when I got promoted, I decided to use my living skills as a realtor'
+    - 'Grim: and renovate haunted houses for ghosts to be able to pass on to the
+      afterlife comfortably and peacefully.'
+    - 'You take a second to process the information that they just splurred out to
+      you. '
+    - 'You: Okay, so let me recap. Grim reapers, now are real estate agents?'
+    - 'Grim: No, just me. The business is called For Lease NaviDead!'
+    - 'Grim stands there, looking very proud of themselves '
+    - 'Grim: See that apartment that has the dark storm clouds and looks run down?
+      Yeah I got the deed to that house many moons ago! '
+    - "Grim: And by many moons, I mean yesterday\u2026 I got it yesterday. I need
+      your help, Please?  "
+    - "You: What\u2019s in it for me? "
+    - 'Grim: Fulfillment? '
+    - You pause.
+    - 'You: Ugh Fine '
+    - 'Grim: THANK YOU SO MUCH! Here is my book of clientele that you will be helping
+      out. '
   - lines:
-    - Part 4
-    - 
+    - "Grim hands you his book. The book is leather bound with the inscription \u201CGrim\u2019s
+      Forever Homes\u201D. "
+    - There is also a small sticker of a cartoon version of himself on the front.
+    - 'Grim: When you have successfully repaired something, these stickers mirror
+      whatever you just repaired.'
+    - 'Grim: Once you have collected all stickers, hopefully the client will let
+      you in on their life story, allowing them to take the jounrey to the afterlife. '
+    - 'Grim: And before you go, to repair the furiture, click on the piece you would
+      like to repair, that will bring up a minigame. '
+    - 'Grim: NOW GO! GO REPAIR SOME FOREVER HOMES '
   speed: 0.05
 --- !u!1 &699101003
 GameObject:
