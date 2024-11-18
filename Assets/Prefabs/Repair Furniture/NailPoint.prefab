@@ -89,7 +89,7 @@ MonoBehaviour:
   nailCollider: {fileID: 4598907581874272876}
   prompt: {fileID: 5359626377051702142}
   inputEnabled: 0
-  speed: 0
+  speed: 0.25
 --- !u!1 &6848538752992577635
 GameObject:
   m_ObjectHideFlags: 0
