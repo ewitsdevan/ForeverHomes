@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 53458969}
   - component: {fileID: 53458968}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,12 +148,12 @@ AudioSource:
   m_GameObject: {fileID: 53458967}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 642a33634337e4945aca0b80e25899ad, type: 3}
+  OutputAudioMixerGroup: {fileID: -1174284865199508393, guid: e32e75ac073424ff3ba5e1b863f9ba4a, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9abddea5480c946f38e4bec399abdd5a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -919,74 +919,215 @@ MonoBehaviour:
     - <i>Unsure of what to do, you decided call out into the darkness.</i>
     - 'You: Hello?'
     - 'You: Hello, Hello?'
-    - <i>No response</i>
-    - You decide to give it one more go, with more oomph
+    - <i>No response.</i>
+    - <i>You decide to give it one more go, with more oomph.</i>
     - 'You: IS SOMEONE THERE?'
     - 'You: ANYONE?'
     - 'You: I am incredibly confused right now.'
   - lines:
-    - 'You: OH MY GOD'
+    - 'You: OH MY GOD!'
     - 'Skeleton: WRONG!!!'
-    - A skeleton person appears before you looking like a millennial tumblr-fied
-      version of the grim reaper
-    - They are adorned with a short black cloak, the hood resting on their shoulder
-      bones, with a blue grey turtleneck
-    - and an offensive colour of orange tie, pictured with tiny ghosts.
+    - <i>A skeleton person appears before you looking like a millennial tumblr-fied
+      version of the grim reaper.</i>
+    - <i>They are adorned with a short black cloak, the hood resting on their shoulder
+      bones, with a blue grey turtleneck and an offensive colour of orange tie, pictured
+      with tiny ghosts.</i>
     - 'You: What?'
     - "Skeleton: You said \"oh my god!\", and I said wrong, like I was saying I wasn\u2019t-"
     - "Grim: You know what, doesn\u2019t matter. HI! I\u2019m Grim."
-    - "They smile wide showing their smile, which is very toothy\u2026 obviously."
+    - "<i>They pull a wide smile, which is very toothy\u2026 obviously.</i>"
     - "You: One- Don\u2019t you think that\u2019s a bit on the nose, two- AM I DEAD? "
     - "Grim: Yes and Yes. Look, I got here like\u2026"
-    - They start to count on their boney fingers.
+    - <i>They start to count on their boney fingers.</i>
     - 'Grim: 30 years ago? '
     - "You:  But aren\u2019t you, like an ancient myth? "
     - 'Grim: Technically yes, however, the old guy was doing this for thousands of
       years and just went into retirement.'
     - "Grim: I was the first soul he saw when planning his retirement and said, \u201CYeah
-      you\u2019ll do\u201D  "
+      you\u2019ll do\u201D ."
     - 'Grim: So.. Here I am! '
     - 'You: Riight, so...'
-    - 'Now both standing in a very awkward silence, Grim takes off his hood. '
+    - <i>Now both standing in a very awkward silence, Grim takes off his hood. </i>
   - lines:
     - 'You: What now?'
-    - "Grim\u2019s eyes light up"
-    - 'Grim: OH YEAH! I need someone to help me renovate this house.'
-    - 'Grim: You have been selected by me to assist.  '
-    - "Grim: And totally because you\u2019re not the first person I have seen today. "
+    - "<i>Grim\u2019s eyes light up.</i>"
+    - "Grim: OH YEAH! I need someone to help me renovate this house. You have been
+      selected by me to assist. And totally not because you\u2019re the first person
+      I have seen today. "
     - "You: Huh? What do you mean \u201Crenovate\u201D? "
     - 'Grim: So the reaping business is not what it used to be. The whole, scythe
-      and ever looming dark presence was really killing our image,'
-    - 'Grim: so when I got promoted, I decided to use my living skills as a realtor'
-    - 'Grim: and renovate haunted houses for ghosts to be able to pass on to the
-      afterlife comfortably and peacefully.'
-    - 'You take a second to process the information that they just splurred out to
-      you. '
+      and ever looming dark presence was really killing our image, so when I got
+      promoted, I decided to use my living skills as a realtor and renovate haunted
+      houses for ghosts to be able to pass on to the afterlife comfortably and peacefully.'
+    - <i>You take a second to process the information that they just splurred out
+      to you. </i>
     - 'You: Okay, so let me recap. Grim reapers, now are real estate agents?'
     - 'Grim: No, just me. The business is called For Lease NaviDead!'
-    - 'Grim stands there, looking very proud of themselves '
-    - 'Grim: See that apartment that has the dark storm clouds and looks run down?
-      Yeah I got the deed to that house many moons ago! '
-    - "Grim: And by many moons, I mean yesterday\u2026 I got it yesterday. I need
-      your help, Please?  "
+    - <i>Grim stands there, looking very proud of themselves.</i>
+    - "Grim: See that apartment that has the dark storm clouds and looks run down?
+      Yeah I got the deed to that house many moons ago! And by many moons, I mean
+      yesterday\u2026 I got it yesterday. I need your help, Please? "
     - "You: What\u2019s in it for me? "
     - 'Grim: Fulfillment? '
-    - You pause.
-    - 'You: Ugh Fine '
+    - <i>You pause.</i>
+    - 'You: Ugh Fine.'
     - 'Grim: THANK YOU SO MUCH! Here is my book of clientele that you will be helping
       out. '
   - lines:
-    - "Grim hands you his book. The book is leather bound with the inscription \u201CGrim\u2019s
-      Forever Homes\u201D. "
-    - There is also a small sticker of a cartoon version of himself on the front.
+    - "<i>Grim hands you his book. The book is leather bound with the inscription
+      \u201CGrim\u2019s Forever Homes\u201D. </i>"
+    - <i>There is also a small sticker of a cartoon version of himself on the front.</i>
     - 'Grim: When you have successfully repaired something, these stickers mirror
-      whatever you just repaired.'
-    - 'Grim: Once you have collected all stickers, hopefully the client will let
-      you in on their life story, allowing them to take the jounrey to the afterlife. '
+      whatever you just repaired. Once you have collected all stickers, hopefully
+      the client will let you in on their life story, allowing them to take the jounrey
+      to the afterlife. '
     - 'Grim: And before you go, to repair the furiture, click on the piece you would
       like to repair, that will bring up a minigame. '
-    - 'Grim: NOW GO! GO REPAIR SOME FOREVER HOMES '
+    - 'Grim: NOW GO! GO REPAIR SOME FOREVER HOMES!'
   speed: 0.05
+  isInGame: 0
+  buttonSFX: {fileID: 1948889584}
+  dialogueSFX: {fileID: 651966370}
+  dialogueMinPitch: 0.9
+  dialogueMaxPitch: 1.1
+--- !u!1 &651966368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 651966369}
+  - component: {fileID: 651966370}
+  - component: {fileID: 651966371}
+  m_Layer: 0
+  m_Name: Dialogue SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &651966369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651966368}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1859431874}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &651966370
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651966368}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6524387002243993459, guid: e32e75ac073424ff3ba5e1b863f9ba4a, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8fed7ddac48de471d990d77d55546b7f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!170 &651966371
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651966368}
+  m_Enabled: 1
+  m_DistortionLevel: 0.5
 --- !u!1 &699101003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2167,28 +2308,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1859431874}
-  - component: {fileID: 1859431873}
   m_Layer: 0
-  m_Name: Audio Manager
+  m_Name: 'Audio '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1859431873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859431872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e9bd7ca9bad62419bd5e3021090c19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 53458968}
-  musicClip: {fileID: 8300000, guid: 642a33634337e4945aca0b80e25899ad, type: 3}
 --- !u!4 &1859431874
 Transform:
   m_ObjectHideFlags: 0
@@ -2203,8 +2329,138 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 53458969}
+  - {fileID: 1948889583}
+  - {fileID: 651966369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1948889582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948889583}
+  - component: {fileID: 1948889584}
+  m_Layer: 0
+  m_Name: Button SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948889583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948889582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1859431874}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1948889584
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948889582}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6524387002243993459, guid: e32e75ac073424ff3ba5e1b863f9ba4a, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 04df5d3cd193c408fb70e7464846aac2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2068392541
 GameObject:
   m_ObjectHideFlags: 0

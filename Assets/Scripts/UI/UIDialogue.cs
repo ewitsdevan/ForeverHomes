@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class UIDialogue : MonoBehaviour
 {
@@ -24,8 +25,11 @@ public class UIDialogue : MonoBehaviour
 
     private int linesIndex;
     private int dialoguesIndex;
-    
-    
+
+    public AudioSource buttonSFX;
+    public AudioSource dialogueSFX;
+    public float dialogueMinPitch;
+    public float dialogueMaxPitch;
     
     void Start()
     {
@@ -38,6 +42,8 @@ public class UIDialogue : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            buttonSFX.Play();
+            
             if(textDialogue.text == dialogues[dialoguesIndex].lines[linesIndex]) 
             { 
                 
@@ -63,15 +69,20 @@ public class UIDialogue : MonoBehaviour
 
     IEnumerator Sentence()
     {
-        
-        //This lets us type out each line at time 
-        foreach (char c in dialogues[dialoguesIndex].lines[linesIndex].ToCharArray())
+        if (dialogues[dialoguesIndex].lines[linesIndex].Contains("<i>"))
         {
-
-            textDialogue.text += c;
-            yield return new WaitForSeconds(speed);
-
-
+            textDialogue.text = dialogues[dialoguesIndex].lines[linesIndex];
+        }
+        else
+        {
+            //This lets us type out each line at time 
+            foreach (char c in dialogues[dialoguesIndex].lines[linesIndex].ToCharArray())
+            {
+                textDialogue.text += c;
+                dialogueSFX.pitch = Random.Range(dialogueMinPitch, dialogueMaxPitch);
+                dialogueSFX.Play();
+                yield return new WaitForSeconds(speed);
+            }
         }
     }
 
