@@ -32,15 +32,19 @@ public class FurnitureRepair : FurnitureBase
     public GameObject tutorialPanel;
     public GameObject successText;
     public GameObject failText;
+    public GameObject outcomePanel;
+    public UIStickerManager stickerManager;
+
+    private bool hasCompleted;
 
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;
         startPos = gameObject.transform.position;
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !hasCompleted)
         {
             if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo) &&
                 gameStarted == false)
@@ -118,11 +122,15 @@ public class FurnitureRepair : FurnitureBase
             {
                 //win game
                 Debug.Log("you have won");
+                UIStickerManager.repairFurnitureEarned = true;
+                UIStickerManager.stickersEarned++;
+                stickerManager.ManualTriggerEarned();
                 
                 // Show success UI
                 gaugeMeter.SetActive(false);
                 tutorialPanel.SetActive(false);
                 successText.SetActive(true);
+                outcomePanel.SetActive(true);
             }
             else
             {
@@ -133,6 +141,7 @@ public class FurnitureRepair : FurnitureBase
                 gaugeMeter.SetActive(false);
                 tutorialPanel.SetActive(false);
                 failText.SetActive(true);
+                outcomePanel.SetActive(true);
             }
             
             // Rotate chair back
@@ -159,6 +168,9 @@ public class FurnitureRepair : FurnitureBase
         gaugeMeter.SetActive(false);
         tutorialPanel.SetActive(true);
         minigamePanel.SetActive(false);
+        
+        // Stops player from playing again
+        hasCompleted = true;
     }
 
 

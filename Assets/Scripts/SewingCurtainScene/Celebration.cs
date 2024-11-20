@@ -38,6 +38,9 @@ public class Celebration : MonoBehaviour
             successText.SetActive(true);
             outcomePanel.SetActive(true);
             outcomePanel.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            UIStickerManager.sewingEarned = true;
+            UIStickerManager.wonMinigame = true;
+            UIStickerManager.stickersEarned++;
             once = true;
         }
     }

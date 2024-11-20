@@ -20,6 +20,7 @@ public class UIDialogue : MonoBehaviour
     [Serializable] public struct Dialogue { public string[] lines; }
     [SerializeField] public Dialogue[] dialogues;
     public float speed;
+    public bool isInGame;
 
     private int linesIndex;
     private int dialoguesIndex;
@@ -83,7 +84,7 @@ public class UIDialogue : MonoBehaviour
             StartCoroutine(Sentence());
 
         }
-        else
+        else if (!isInGame)
         {
             // Next Dialogue Act
             if (dialoguesIndex == 0)
