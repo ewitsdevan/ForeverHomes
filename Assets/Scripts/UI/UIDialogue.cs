@@ -56,7 +56,10 @@ public class UIDialogue : MonoBehaviour
                 StopAllCoroutines();
                 textDialogue.text = dialogues[dialoguesIndex].lines[linesIndex];
             }
-        
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SkipCutscene();
         }
     }
 
@@ -133,5 +136,11 @@ public class UIDialogue : MonoBehaviour
                 loadingScreen.LoadGameScene();
             }
         }
+    }
+
+    public void SkipCutscene()
+    {
+        loadingScreen.gameObject.SetActive(true);
+        loadingScreen.LoadGameScene();
     }
 }

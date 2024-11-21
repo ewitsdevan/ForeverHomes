@@ -1,6 +1,7 @@
 // Created by Devan Laczko, 18/10/2024
 // Updated 19/10/2024
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,11 @@ public class UILoading : MonoBehaviour
         {
             //StartCoroutine(FinishLoading());
         }
+    }
+
+    private void OnEnable()
+    {
+        _loadingBar.fillAmount = 0;
     }
 
     public void LoadGameScene()
