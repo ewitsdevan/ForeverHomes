@@ -1,4 +1,5 @@
 // Created by Devan Laczko 14/11/2024
+// Updated 04/12/2024
 
 using System;
 using System.Collections;
@@ -41,24 +42,29 @@ public class UIDialogue : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            buttonSFX.Play();
-            
-            if(textDialogue.text == dialogues[dialoguesIndex].lines[linesIndex]) 
-            { 
-                
-                NextLine();
-            
-            }
-            else 
-            {
-            
-                StopAllCoroutines();
-                textDialogue.text = dialogues[dialoguesIndex].lines[linesIndex];
-            }
+            ContinueButton();
         }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             SkipCutscene();
+        }
+    }
+
+    public void ContinueButton()
+    {
+        buttonSFX.Play();
+            
+        if(textDialogue.text == dialogues[dialoguesIndex].lines[linesIndex]) 
+        { 
+                
+            NextLine();
+            
+        }
+        else 
+        {
+            
+            StopAllCoroutines();
+            textDialogue.text = dialogues[dialoguesIndex].lines[linesIndex];
         }
     }
 
