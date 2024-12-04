@@ -1,3 +1,6 @@
+// Created by Devan Laczko, 20/11/2024
+// Updated 04/12/2024
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -32,7 +35,7 @@ public class UIStickerManager : MonoBehaviour
     {
         if (wonMinigame)
         {
-            StartCoroutine(StickerEarned());
+            StickerEarned();
             wonMinigame = false;
         }
 
@@ -53,16 +56,11 @@ public class UIStickerManager : MonoBehaviour
     public void ManualTriggerEarned()
     {
         CheckStickers();
-        StartCoroutine(StickerEarned());
+        StickerEarned();
     }
 
-    IEnumerator StickerEarned()
+    public void StickerEarned()
     {
-        stickerEarnedPopup.SetActive(true);
-        stickerEarnedPopup.GetComponent<UIStartAnimation>().EntranceAnimation();
-
-        yield return new WaitForSeconds(popupDuration);
-        
-        stickerEarnedPopup.GetComponent<UIStartAnimation>().ExitAnimation();
+        stickerEarnedPopup.GetComponent<UIFloatAnimation>().IntroAnimation();
     }
 }

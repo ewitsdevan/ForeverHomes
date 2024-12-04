@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 18/10/2024
-// Updated 19/10/2024
+// Updated 04/12/2024
 
 using System;
 using System.Collections;
@@ -48,7 +48,6 @@ public class UILoading : MonoBehaviour
 
     IEnumerator LoadScene(string sceneName)
     {
-        gameObject.GetComponent<UIAutoAnimation>().EntranceAnimation();
         yield return new WaitForSeconds(1.0f);
         
         AsyncOperation loadLevel = SceneManager.LoadSceneAsync(sceneName);

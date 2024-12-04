@@ -59,7 +59,6 @@ public class SewingMinigameLaunch : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         loadingPanel.SetActive(true);
-        loadingPanel.GetComponent<UIAutoAnimation>().EntranceAnimation();
         loadingPanel.GetComponent<UILoading>().LoadSewingMinigame();
     }
 }

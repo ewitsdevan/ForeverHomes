@@ -1,8 +1,9 @@
 // Created by Devan Laczko, 30/09/2024
-// Updated 07/11/2024
+// Updated 04/12/2024
 
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,30 +27,22 @@ public class UIMenuButton : MonoBehaviour
         {
             StartCoroutine(ChangeMenu(stickersMenu, mainMenu, 0.5f));
             
-            stickersButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            stickersButton.GetComponent<UIFloatAnimation>().IntroAnimation();
             stickersButton.GetComponent<Button>().interactable = true;
             
-            bookFlipper.GetComponent<AutoFlip>().PageFlipTime = 0.2f;
             bookFlipper.GetComponent<AutoFlip>().FlipLeftPage();
         }
         else if (settingsMenu.activeSelf == true)
         {
-            StartCoroutine(ChangeMenu(settingsMenu, mainMenu, 0.75f));
+            StartCoroutine(ChangeMenu(settingsMenu, mainMenu, 1f));
             
-            settingsButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            settingsButton.GetComponent<UIFloatAnimation>().IntroAnimation();
             settingsButton.GetComponent<Button>().interactable = true;
             
-            bookFlipper.GetComponent<AutoFlip>().PageFlipTime = 0.1f;
             StartCoroutine(FlipTwice(false));
-        }
-        else
-        {
-            mainMenu.SetActive(true);
-            mainMenu.GetComponent<UIAutoAnimation>().EntranceAnimation();
         }
 
         StartCoroutine(QuitButton());
-        StartCoroutine(DisableButtonWhileFlip());
     }
     
     public void StickersMenu()
@@ -58,94 +51,94 @@ public class UIMenuButton : MonoBehaviour
         {
             StartCoroutine(ChangeMenu(mainMenu, stickersMenu, 0.5f));
             
-            bookFlipper.GetComponent<AutoFlip>().PageFlipTime = 0.2f;
             bookFlipper.GetComponent<AutoFlip>().FlipRightPage();
         }
         else if (settingsMenu.activeSelf == true)
         {
             StartCoroutine(ChangeMenu(settingsMenu, stickersMenu, 0.5f));
             
-            settingsButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            settingsButton.GetComponent<UIFloatAnimation>().IntroAnimation();
             settingsButton.GetComponent<Button>().interactable = true;
             
-            bookFlipper.GetComponent<AutoFlip>().PageFlipTime = 0.2f;
             bookFlipper.GetComponent<AutoFlip>().FlipLeftPage();
         }
-        else
-        {
-            stickersMenu.SetActive(true);
-            stickersMenu.GetComponent<UIAutoAnimation>().EntranceAnimation();
-            stickersButton.GetComponent<UIAutoAnimation>().ExitAnimation();
-        }
+        
+        stickersButton.GetComponent<Button>().interactable = false;
+        stickersButton.GetComponent<RectTransform>().DOKill();
+        stickersButton.GetComponent<UIFloatAnimation>().OutroAnimation();
 
         StartCoroutine(BackButton());
-        StartCoroutine(DisableButtonWhileFlip());
     }
     
     public void SettingsMenu()
     {
         if (mainMenu.activeSelf == true)
         {
-            StartCoroutine(ChangeMenu(mainMenu, settingsMenu, 0.75f));
+            StartCoroutine(ChangeMenu(mainMenu, settingsMenu, 1f));
             
-            bookFlipper.GetComponent<AutoFlip>().PageFlipTime = 0.1f;
             StartCoroutine(FlipTwice(true));
         }
         else if (stickersMenu.activeSelf == true)
         {
             StartCoroutine(ChangeMenu(stickersMenu, settingsMenu, 0.5f));
             
-            stickersButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            stickersButton.GetComponent<UIFloatAnimation>().IntroAnimation();
             stickersButton.GetComponent<Button>().interactable = true;
             
-            bookFlipper.GetComponent<AutoFlip>().PageFlipTime = 0.2f;
             bookFlipper.GetComponent<AutoFlip>().FlipRightPage();
         }
-        else
-        {
-            settingsMenu.SetActive(true);
-            settingsMenu.GetComponent<UIAutoAnimation>().EntranceAnimation();
-        }
+        
+        settingsButton.GetComponent<Button>().interactable = false;
+        settingsButton.GetComponent<RectTransform>().DOKill();
+        settingsButton.GetComponent<UIFloatAnimation>().OutroAnimation();
         
         StartCoroutine(BackButton());
-        StartCoroutine(DisableButtonWhileFlip());
     }
 
     IEnumerator ChangeMenu(GameObject otherMenu, GameObject targetMenu, float speed)
     {
-        otherMenu.GetComponent<UIAutoAnimation>().ExitAnimation();
+        otherMenu.GetComponent<UIFadeAnimation>().OutroAnimation();
         yield return new WaitForSeconds(speed);
         otherMenu.SetActive(false);
         
         targetMenu.SetActive(true);
-        targetMenu.GetComponent<UIAutoAnimation>().EntranceAnimation();
+        targetMenu.GetComponent<UIFadeAnimation>().IntroAnimaton();
     }
 
     IEnumerator BackButton()
     {
-        if (backButton.activeSelf == false)
+        if (backButton.GetComponent<Button>().interactable == false)
         {
-            quitButton.GetComponent<UIAutoAnimation>().ExitAnimation();
-            closeButton.GetComponent<UIAutoAnimation>().ExitAnimation();
+            quitButton.GetComponent<Button>().interactable = false;
+            quitButton.GetComponent<RectTransform>().DOKill();
+            quitButton.GetComponent<UIFloatAnimation>().OutroAnimation();
+            
+            closeButton.GetComponent<Button>().interactable = false;
+            closeButton.GetComponent<RectTransform>().DOKill();
+            closeButton.GetComponent<UIFloatAnimation>().OutroAnimation();
+            
             yield return new WaitForSeconds(0.5f);
-            quitButton.SetActive(false);
-            closeButton.SetActive(false);
-            backButton.SetActive(true);
-            backButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            
+            backButton.GetComponent<Button>().interactable = true;
+            backButton.GetComponent<UIFloatAnimation>().IntroAnimation();
         }
     }
 
     IEnumerator QuitButton()
     {
-        if (quitButton.activeSelf == false)
+        if (quitButton.GetComponent<Button>().interactable == false)
         {
-            backButton.GetComponent<UIAutoAnimation>().ExitAnimation();
+            backButton.GetComponent<Button>().interactable = false;
+            backButton.GetComponent<RectTransform>().DOKill();
+            backButton.GetComponent<UIFloatAnimation>().OutroAnimation();
+            
             yield return new WaitForSeconds(0.5f);
-            backButton.SetActive(false);
-            quitButton.SetActive(true);
-            closeButton.SetActive(true);
-            quitButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
-            closeButton.GetComponent<UIAutoAnimation>().EntranceAnimation();
+            
+            quitButton.GetComponent<Button>().interactable = true;
+            quitButton.GetComponent<UIFloatAnimation>().IntroAnimation();
+            
+            closeButton.GetComponent<Button>().interactable = true;
+            closeButton.GetComponent<UIFloatAnimation>().IntroAnimation();
         }
     }
 
@@ -163,22 +156,5 @@ public class UIMenuButton : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             bookFlipper.GetComponent<AutoFlip>().FlipLeftPage();
         }
-    }
-
-    IEnumerator DisableButtonWhileFlip()
-    {
-        backButton.GetComponent<Button>().interactable = false;
-        quitButton.GetComponent<Button>().interactable = false;
-        closeButton.GetComponent<Button>().interactable = false;
-        settingsButton.GetComponent<Button>().interactable = false;
-        stickersButton.GetComponent<Button>().interactable = false;
-            
-        yield return new WaitForSeconds(0.75f);
-            
-        backButton.GetComponent<Button>().interactable = true;
-        quitButton.GetComponent<Button>().interactable = true;
-        closeButton.GetComponent<Button>().interactable = true;
-        settingsButton.GetComponent<Button>().interactable = true;
-        stickersButton.GetComponent<Button>().interactable = true;
     }
 }

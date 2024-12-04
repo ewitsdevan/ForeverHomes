@@ -37,7 +37,6 @@ public class Celebration : MonoBehaviour
             Debug.Log("particle effect, wooo, back to main scene");
             successText.SetActive(true);
             outcomePanel.SetActive(true);
-            outcomePanel.GetComponent<UIAutoAnimation>().EntranceAnimation();
             UIStickerManager.sewingEarned = true;
             UIStickerManager.wonMinigame = true;
             UIStickerManager.stickersEarned++;
@@ -52,7 +51,6 @@ public class Celebration : MonoBehaviour
             Debug.Log("boooo u suck");
             failText.SetActive(true);
             outcomePanel.SetActive(true);
-            outcomePanel.GetComponent<UIAutoAnimation>().EntranceAnimation();
             once = true;
         }
     }
