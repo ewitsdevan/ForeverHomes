@@ -154,12 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48583db5672d0cd40a8b983b1377cce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtMaskOG: {fileID: 2800000, guid: b783a22809970ca45bb719e73619e23d, type: 3}
-  dirtBrush: {fileID: 2800000, guid: 2ac4802c57adaf349a3f95b058c94366, type: 3}
+  dirtMaskOG: {fileID: 2800000, guid: 4abbeff89eb49a148b6904bc6ea70105, type: 3}
+  dirtBrush: {fileID: 2800000, guid: d63f57920cf61a04a88718a9ec48977a, type: 3}
   mainCam: {fileID: 595465885}
   material: {fileID: 2100000, guid: ac3888a3b6ca0ce418de1f566019c37b, type: 2}
   dirtAmount: 0
-  dirtThreshold: 30000
+  dirtThreshold: 65000
   isClean: 0
 --- !u!64 &141343094
 MeshCollider:
@@ -243,7 +243,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.42037103, y: 0.0096014, z: -0.7491213}
-  m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
+  m_LocalScale: {x: 0.49233142, y: 0.39012, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
