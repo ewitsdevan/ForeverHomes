@@ -1,6 +1,7 @@
 // Created by Devan Laczko, 20/11/2024
 // Updated 04/12/2024
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,6 +31,17 @@ public class UIStickerManager : MonoBehaviour
     public TextMeshProUGUI menuText;
     
     public float popupDuration;
+    public CleaningManager cleaningManager;
+    
+    public void OnEnable()
+    {
+        cleaningManager.cleaningGameEndEvent += WonCleaning;
+    }
+
+    public void OnDisable()
+    {
+        cleaningManager.cleaningGameEndEvent -= WonCleaning;
+    }
     
     void Start()
     {
@@ -62,5 +74,12 @@ public class UIStickerManager : MonoBehaviour
     public void StickerEarned()
     {
         stickerEarnedPopup.GetComponent<UIFloatAnimation>().IntroAnimation();
+    }
+    
+    public void WonCleaning(bool won)
+    {
+        gramaphoneEarned = won;
+        wonMinigame = won;
+        ManualTriggerEarned();
     }
 }
