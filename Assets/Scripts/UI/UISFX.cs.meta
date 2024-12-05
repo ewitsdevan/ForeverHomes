@@ -3,7 +3,14 @@ guid: e6aa1b8cfd46847e6a4fc01a72e45a38
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - buttonClickClip: {fileID: 8300000, guid: 05d8ddca7dd5c40f7884346f9b6f9158, type: 3}
+  - pageFlipClip: {fileID: 8300000, guid: 5ff1bbf6c989144e7ba6e256ca97cfde, type: 3}
+  - hammerClip: {fileID: 8300000, guid: bfb81baf88a9b48a5b775e9388e84549, type: 3}
+  - confettiClip: {fileID: 8300000, guid: 913f0940472574595b26f34102f8efba, type: 3}
+  - furnitureClip: {fileID: 8300000, guid: 04df5d3cd193c408fb70e7464846aac2, type: 3}
+  - rustleClip: {fileID: 8300000, guid: e7412801a1a317f41b109867b7de64f5, type: 3}
+  - catClip: {fileID: 8300000, guid: 941b1cec8bbc04dadac406ebd8c97277, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
