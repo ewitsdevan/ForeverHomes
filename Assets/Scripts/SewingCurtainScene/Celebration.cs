@@ -7,8 +7,11 @@ public class Celebration : MonoBehaviour
 {
     public SewingGameManager manager;
     public GameObject outcomePanel;
+    public GameObject retryButton;
     public GameObject successText;
     public GameObject failText;
+    public UISFX sfxManager;
+    public ParticleSystem confetti;
 
     private bool once;
 
@@ -34,13 +37,18 @@ public class Celebration : MonoBehaviour
     {
         if (once == false)
         {
+            once = true;
             Debug.Log("particle effect, wooo, back to main scene");
             successText.SetActive(true);
             outcomePanel.SetActive(true);
-            UIStickerManager.sewingEarned = true;
-            UIStickerManager.wonMinigame = true;
-            UIStickerManager.stickersEarned++;
-            once = true;
+            sfxManager.ConfettiSound();
+            confetti.Play();
+
+            if (!UIStickerManager.sewingEarned)
+            {
+                UIStickerManager.sewingEarned = true;
+                UIStickerManager.wonMinigame = true;
+            }
         }
     }
 
@@ -50,6 +58,7 @@ public class Celebration : MonoBehaviour
         {
             Debug.Log("boooo u suck");
             failText.SetActive(true);
+            retryButton.SetActive(true);
             outcomePanel.SetActive(true);
             once = true;
         }

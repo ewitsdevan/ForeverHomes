@@ -22,13 +22,13 @@ public class UIStickerManager : MonoBehaviour
     public static bool gramaphoneEarned;
     public GameObject gramaphoneSticker;
 
-    public static bool paintingEarned;
+    public static bool paintingEarned = true;
     public GameObject paintingSticker;
 
     public static bool completionEarned;
     public GameObject completionSticker;
 
-    public static int stickersEarned = 1;
+    public static int stickersEarned;
     public TextMeshProUGUI menuText;
     public Slider menuSlider;
     
@@ -55,21 +55,47 @@ public class UIStickerManager : MonoBehaviour
 
     public void CheckStickers()
     {
+        stickersEarned = 0;
+
+        if (repairFurnitureEarned)
+        {
+            repairFurnitureSticker.SetActive(true);
+            stickersEarned++;
+        }
+
+        if (sewingEarned)
+        {
+            sewingSticker.SetActive(true);
+            stickersEarned++;
+        }
+
+        if (gramaphoneEarned)
+        {
+            gramaphoneSticker.SetActive(true);
+            stickersEarned++;
+        }
+
+        if (paintingEarned)
+        {
+            paintingSticker.SetActive(true);
+            stickersEarned++;
+        }
+
+        if (completionEarned)
+        {
+            completionSticker.SetActive(true);
+            stickersEarned++;
+        }
+
+        menuText.text = new string(stickersEarned.ToString() + "/5");
+        menuSlider.value = stickersEarned;
+        
         if (stickersEarned >= 4)
         {
             completionEarned = true;
             stickersEarned++;
             finishGameButton.GetComponent<Button>().interactable = true;
         }
-        
-        if (repairFurnitureEarned) repairFurnitureSticker.SetActive(true);
-        if (sewingEarned) sewingSticker.SetActive(true);
-        if (gramaphoneEarned) gramaphoneSticker.SetActive(true);
-        if (paintingEarned) paintingSticker.SetActive(true);
-        if (completionEarned) completionSticker.SetActive(true);
-
-        menuText.text = new string(stickersEarned.ToString() + "/5");
-        menuSlider.value = stickersEarned;
     }
 
     public void ManualTriggerEarned()
@@ -85,16 +111,22 @@ public class UIStickerManager : MonoBehaviour
     
     public void WonCleaning(bool won)
     {
-        gramaphoneEarned = won;
-        stickersEarned++;
-        ManualTriggerEarned();
-        cleaningManager.cleaningGameEndEvent -= WonCleaning;
+        if (!gramaphoneEarned)
+        {
+            gramaphoneEarned = won;
+            stickersEarned++;
+            ManualTriggerEarned();
+            cleaningManager.cleaningGameEndEvent -= WonCleaning;
+        }
     }
     
     public void WonRepair(bool won)
     {
-        repairFurnitureEarned = won;
-        stickersEarned++;
-        ManualTriggerEarned();
+        if (!repairFurnitureEarned)
+        {
+            repairFurnitureEarned = won;
+            stickersEarned++;
+            ManualTriggerEarned();
+        }
     }
 }

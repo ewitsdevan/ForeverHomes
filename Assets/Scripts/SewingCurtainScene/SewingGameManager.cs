@@ -66,6 +66,6 @@ public class SewingGameManager : MonoBehaviour
             }
         }
 
-        score.text = sewingScore.ToString();
+        score.text = new string("Score: " + sewingScore);
     }
 }

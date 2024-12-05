@@ -9298,7 +9298,7 @@ MonoBehaviour:
   maxSize: 200
   minArrowSpeed: 4
   maxArrowSpeed: 6
-  maxDistance: 7.5
+  maxDistance: 10
   isActive: 0
 --- !u!114 &950758338
 MonoBehaviour:
@@ -20750,8 +20750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panSpeed: 10
-  panLimitX: {x: -5, y: 5}
-  panLimitZ: {x: -5, y: 5}
+  panLimitX: {x: -5.5, y: 5.5}
+  panLimitZ: {x: -5.5, y: 5.5}
   zoomSpeed: 100
   zoomSmoothness: 8
   minZoom: 2
@@ -21651,7 +21651,7 @@ PrefabInstance:
       objectReference: {fileID: 697973686}
     - target: {fileID: 5941239414927921888, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
       propertyPath: m_Name
-      value: ChairRepairable
+      value: Repairing
       objectReference: {fileID: 0}
     - target: {fileID: 6212064745048388211, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
       propertyPath: speed

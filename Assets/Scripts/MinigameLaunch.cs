@@ -18,7 +18,7 @@ public class MinigameLaunch : MonoBehaviour
 
     public GameObject book;
     
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !book.activeSelf)
         {
@@ -43,7 +43,6 @@ public class MinigameLaunch : MonoBehaviour
         mainCamera.GetComponent<IsometricCamera>().Reset();
         
         SetCamera();
-        StartCoroutine(LoadGame());
     }
 
     void SetCamera()
@@ -56,6 +55,9 @@ public class MinigameLaunch : MonoBehaviour
         {
             // Zooms camera using existing camera system
             mainCamera.GetComponent<IsometricCamera>().minigameZoom = cameraZoom;
+            
+            // Loads Minigame
+            StartCoroutine(LoadGame());
         }).SetEase(Ease.OutSine);
     }
 

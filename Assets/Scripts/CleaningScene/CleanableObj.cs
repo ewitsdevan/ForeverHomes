@@ -20,12 +20,15 @@ public class CleanableObj : MonoBehaviour
     private float dirtAmountTotal;
     public float dirtThreshold;
 
-    public bool isClean = false;
+    [SerializeField] public bool isClean;
     public bool gameStarted;
 
     public void Start()
     {
-        CreateTexture();
+        if (!isClean)
+        {
+            CreateTexture();
+        }
     }
 
     void CreateTexture()
