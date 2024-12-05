@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 141343094}
   - component: {fileID: 141343093}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: CleanableSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,9 +154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48583db5672d0cd40a8b983b1377cce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtMask: {fileID: 2800000, guid: b783a22809970ca45bb719e73619e23d, type: 3}
-  dirtBrush: {fileID: 2800000, guid: 80d9d678ed3a745499609976b7fe3a50, type: 3}
+  dirtMaskOG: {fileID: 2800000, guid: 4abbeff89eb49a148b6904bc6ea70105, type: 3}
+  dirtBrush: {fileID: 2800000, guid: d63f57920cf61a04a88718a9ec48977a, type: 3}
   mainCam: {fileID: 595465885}
+  material: {fileID: 2100000, guid: ac3888a3b6ca0ce418de1f566019c37b, type: 2}
+  dirtAmount: 0
+  dirtThreshold: 65000
+  isClean: 0
 --- !u!64 &141343094
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -199,7 +203,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 1cfa899a8e6303148a397941ca13ea19, type: 3}
+  - {fileID: 2100000, guid: ac3888a3b6ca0ce418de1f566019c37b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +243,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.42037103, y: 0.0096014, z: -0.7491213}
-  m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
+  m_LocalScale: {x: 0.49233142, y: 0.39012, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -499,10 +503,56 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1769029619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1769029621}
+  - component: {fileID: 1769029620}
+  m_Layer: 0
+  m_Name: CleaningManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1769029620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769029619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2dc3c384ad5f334290a0af57d5b3968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleanableObj: {fileID: 141343093}
+--- !u!4 &1769029621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769029619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.5969903, y: -0.48163864, z: 5.591289}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 595465886}
   - {fileID: 222610829}
+  - {fileID: 1769029621}
   - {fileID: 141343097}
