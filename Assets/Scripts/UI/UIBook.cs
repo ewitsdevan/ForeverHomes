@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 26/09/2024
-// Updated 30/09/2024
+// Updated 04/12/2024
 
 using System;
 using System.Collections;
@@ -24,18 +24,18 @@ public class UIBook : MonoBehaviour
     private void ShowBook()
     {
         gameObject.SetActive(true);
-        gameObject.GetComponent<UIAutoAnimation>().EntranceAnimation();
+        gameObject.GetComponent<UIFloatAnimation>().IntroAnimation();
     }
 
     private void HideBook()
     {
-        gameObject.GetComponent<UIAutoAnimation>().ExitAnimation();
+        gameObject.GetComponent<UIFloatAnimation>().OutroAnimation();
         StartCoroutine(HideDelay());
     }
 
     IEnumerator HideDelay()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
         gameObject.SetActive(false);
     }
 }

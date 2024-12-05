@@ -1,0 +1,61 @@
+// Created by Devan Laczko, 19/10/2024
+// Updated 04/12/2024
+
+using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
+using UnityEngine;
+
+public class UIFadeAnimation : MonoBehaviour
+{
+    private CanvasGroup _canvasGroup;
+    [SerializeField] public bool fadeInOnStart;
+    [SerializeField] public bool fadeOutOnStart;
+    [SerializeField] private float startDelay;
+    [SerializeField] private float tweenDuration;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        _canvasGroup = GetComponent<CanvasGroup>();
+        
+        if (fadeInOnStart)
+        {
+            _canvasGroup.alpha = 0f;
+        }
+
+        if (fadeOutOnStart)
+        {
+            _canvasGroup.alpha = 1f;
+        }
+        
+        StartCoroutine(StartDelay());
+    }
+
+    public void IntroAnimaton()
+    {
+        _canvasGroup = GetComponent<CanvasGroup>();
+        _canvasGroup.DOFade(1, tweenDuration);
+    }
+
+    public void OutroAnimation()
+    {
+        _canvasGroup = GetComponent<CanvasGroup>();
+        _canvasGroup.DOFade(0, tweenDuration);
+    }
+
+    IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(startDelay);
+        
+        if (fadeInOnStart)
+        {
+            IntroAnimaton();
+        }
+
+        if (fadeOutOnStart)
+        {
+            OutroAnimation();
+        }
+    }
+}

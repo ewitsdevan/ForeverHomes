@@ -1,4 +1,5 @@
 // Created by Devan Laczko 14/11/2024
+// Updated 04/12/2024
 
 using System;
 using System.Collections;
@@ -12,7 +13,6 @@ using Random = UnityEngine.Random;
 public class UIDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textDialogue;
-    public UIAutoAnimation textBox;
     public GameObject background;
     public GameObject grimPose1;
     public GameObject grimPose2;
@@ -42,24 +42,29 @@ public class UIDialogue : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            buttonSFX.Play();
-            
-            if(textDialogue.text == dialogues[dialoguesIndex].lines[linesIndex]) 
-            { 
-                
-                NextLine();
-            
-            }
-            else 
-            {
-            
-                StopAllCoroutines();
-                textDialogue.text = dialogues[dialoguesIndex].lines[linesIndex];
-            }
+            ContinueButton();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Return))
         {
             SkipCutscene();
+        }
+    }
+
+    public void ContinueButton()
+    {
+        buttonSFX.Play();
+            
+        if(textDialogue.text == dialogues[dialoguesIndex].lines[linesIndex]) 
+        { 
+                
+            NextLine();
+            
+        }
+        else 
+        {
+            
+            StopAllCoroutines();
+            textDialogue.text = dialogues[dialoguesIndex].lines[linesIndex];
         }
     }
 
@@ -107,18 +112,18 @@ public class UIDialogue : MonoBehaviour
                 textDialogue.text = string.Empty;
                 
                 background.SetActive(true);
-                background.GetComponent<UIAutoAnimation>().EntranceAnimation();
+                background.GetComponent<UIFadeAnimation>().IntroAnimaton();
                 grimPose1.SetActive(true);
-                grimPose1.GetComponent<UIAutoAnimation>().EntranceAnimation();
+                grimPose1.GetComponent<UIFadeAnimation>().IntroAnimaton();
                 StartDialogue();
             }
             else if (dialoguesIndex == 1)
             {
                 dialoguesIndex++;
                 textDialogue.text = string.Empty;
-                grimPose1.GetComponent<UIAutoAnimation>().ExitAnimation();
+                grimPose1.GetComponent<UIFadeAnimation>().OutroAnimation();
                 grimPose2.SetActive(true);
-                grimPose2.GetComponent<UIAutoAnimation>().EntranceAnimation();
+                grimPose2.GetComponent<UIFadeAnimation>().IntroAnimaton();
                 StartDialogue();
                 
             }
