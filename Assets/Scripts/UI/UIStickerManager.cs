@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 20/11/2024
-// Updated 04/12/2024
+// Updated 05/12/2024
 
 using System;
 using System.Collections;
@@ -31,16 +31,13 @@ public class UIStickerManager : MonoBehaviour
     public TextMeshProUGUI menuText;
     
     public float popupDuration;
+    
     public CleaningManager cleaningManager;
+    public FurnitureRepair furnitureRepair;
     
     public void OnEnable()
     {
         cleaningManager.cleaningGameEndEvent += WonCleaning;
-    }
-
-    public void OnDisable()
-    {
-        cleaningManager.cleaningGameEndEvent -= WonCleaning;
     }
     
     void Start()
@@ -80,6 +77,16 @@ public class UIStickerManager : MonoBehaviour
     {
         gramaphoneEarned = won;
         wonMinigame = won;
+        stickersEarned++;
+        ManualTriggerEarned();
+        cleaningManager.cleaningGameEndEvent -= WonCleaning;
+    }
+    
+    public void WonRepair(bool won)
+    {
+        repairFurnitureEarned = won;
+        wonMinigame = won;
+        stickersEarned++;
         ManualTriggerEarned();
     }
 }

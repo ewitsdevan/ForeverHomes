@@ -14,6 +14,9 @@ public class UIFadeAnimation : MonoBehaviour
     [SerializeField] private float startDelay;
     [SerializeField] private float tweenDuration;
     
+    [SerializeField] private bool autoHide;
+    [SerializeField] private float waitDuration;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,11 @@ public class UIFadeAnimation : MonoBehaviour
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         _canvasGroup.DOFade(1, tweenDuration);
+        
+        if (autoHide)
+        {
+            StartCoroutine(WaitBeforeOutro());
+        }
     }
 
     public void OutroAnimation()
@@ -57,5 +65,11 @@ public class UIFadeAnimation : MonoBehaviour
         {
             OutroAnimation();
         }
+    }
+    
+    IEnumerator WaitBeforeOutro()
+    {
+        yield return new WaitForSeconds(waitDuration);
+        OutroAnimation();
     }
 }

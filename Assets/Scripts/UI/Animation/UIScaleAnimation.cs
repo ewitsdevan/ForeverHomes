@@ -14,6 +14,9 @@ public class UIScaleAnimation : MonoBehaviour
     [SerializeField] private Vector2 introScale;
     [SerializeField] private float tweenDuration;
     
+    [SerializeField] private bool autoHide;
+    [SerializeField] private float waitDuration;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +44,25 @@ public class UIScaleAnimation : MonoBehaviour
     {
         _rectTransform = GetComponent<RectTransform>();
         _rectTransform.DOScale(introScale, tweenDuration);
+        
+        if (autoHide)
+            StartCoroutine(WaitBeforeOutro(waitDuration));
     }
 
     public void OutroAnimation()
     {
         _rectTransform = GetComponent<RectTransform>();
         _rectTransform.DOScale(outroScale, tweenDuration);
+    }
+    
+    IEnumerator WaitBeforeOutro(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        OutroAnimation();
+    }
+
+    public void OutroWithDelay(float parsedDelay)
+    {
+        StartCoroutine(WaitBeforeOutro(parsedDelay));
     }
 }

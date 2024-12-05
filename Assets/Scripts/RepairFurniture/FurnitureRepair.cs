@@ -1,5 +1,5 @@
 // Created by Maddie Thynne 23/10/2024
-// Updated by Devan Laczko 24/10/2024
+// Updated by Devan Laczko 05/12/2024
 
 using System;
 using System.Collections;
@@ -14,7 +14,7 @@ public class FurnitureRepair : FurnitureBase
     private RaycastHit hitInfo;
     public GameObject[] nailPoints;
     
-    private Vector3 startPos;
+    public Vector3 startRotation;
     public Vector3 objectRotation;
     public Vector3 cameraPosition;
     public float cameraZoom;
@@ -32,19 +32,20 @@ public class FurnitureRepair : FurnitureBase
     public GameObject tutorialPanel;
     public GameObject successText;
     public GameObject failText;
-    public GameObject outcomePanel;
     public UIStickerManager stickerManager;
-
-    private bool hasCompleted;
+    public GameObject cameraControls;
+    public GameObject hammerControls;
+    public ParticleSystem confetti;
+    public ParticleSystem hammerStrike;
+    public UISFX sfxManager;
 
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;
-        startPos = gameObject.transform.position;
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !hasCompleted)
+        if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo) &&
                 gameStarted == false)
@@ -60,8 +61,15 @@ public class FurnitureRepair : FurnitureBase
     
     public void Launch()
     {
+        // Play Sound
+        sfxManager.FurnitureSound();
+        
         gameStarted = true;
         //startPos = mainCamera.transform;
+        
+        // Change Controls UI
+        cameraControls.GetComponent<UIFloatAnimation>().OutroAnimation();
+        hammerControls.GetComponent<UIFloatAnimation>().IntroWithDelay(1f);
         
         // Reset Camera
         mainCamera.GetComponent<IsometricCamera>().Reset();
@@ -97,13 +105,18 @@ public class FurnitureRepair : FurnitureBase
         
         // Show UI Panel
         minigamePanel.SetActive(true);
+        minigamePanel.GetComponent<UIScaleAnimation>().IntroAnimation();
         
     }
     
     void NailHit(bool success)
     {
+        // Hammer strike VFX
+        hammerStrike.Play();
+        
         if (success)
         {
+            sfxManager.HammerHitSound();
             //nailPosition.SuccessfulHit();
             successfulHitCount++;
             curHitCount++;
@@ -111,6 +124,7 @@ public class FurnitureRepair : FurnitureBase
 
         if (success == false)
         {
+            sfxManager.HammerMissSound();
             //nailPosition.FailedHit();
             curHitCount++;
         }
@@ -122,15 +136,12 @@ public class FurnitureRepair : FurnitureBase
             {
                 //win game
                 Debug.Log("you have won");
-                UIStickerManager.repairFurnitureEarned = true;
-                UIStickerManager.stickersEarned++;
-                stickerManager.ManualTriggerEarned();
+                stickerManager.WonRepair(true);
                 
                 // Show success UI
-                gaugeMeter.SetActive(false);
-                tutorialPanel.SetActive(false);
-                successText.SetActive(true);
-                outcomePanel.SetActive(true);
+                successText.GetComponent<UIScaleAnimation>().IntroAnimation();
+                confetti.Play();
+                sfxManager.ConfettiSound();
             }
             else
             {
@@ -138,18 +149,13 @@ public class FurnitureRepair : FurnitureBase
                 Debug.Log("you have lost");
                 
                 // Show failure UI
-                gaugeMeter.SetActive(false);
-                tutorialPanel.SetActive(false);
-                failText.SetActive(true);
-                outcomePanel.SetActive(true);
+                failText.GetComponent<UIScaleAnimation>().IntroAnimation();
             }
             
             // Rotate chair back
-            gameObject.transform.DOLocalRotate(startPos, rotateSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
+            gameObject.transform.DOLocalRotate(startRotation, rotateSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
             
         }
-        
-        //zoom camera back out
     }
 
     private void OnDisable()
@@ -163,16 +169,12 @@ public class FurnitureRepair : FurnitureBase
         mainCamera.GetComponent<IsometricCamera>().Reset();
         
         // Reset and Disable UI
-        successText.SetActive(false);
-        failText.SetActive(false);
         gaugeMeter.SetActive(false);
         tutorialPanel.SetActive(true);
         minigamePanel.SetActive(false);
         
-        // Stops player from playing again
-        hasCompleted = true;
+        // Change Controls UI
+        hammerControls.GetComponent<UIFloatAnimation>().OutroAnimation();
+        cameraControls.GetComponent<UIFloatAnimation>().IntroWithDelay(1f);
     }
-
-
-
 }

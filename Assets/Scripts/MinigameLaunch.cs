@@ -1,11 +1,12 @@
 // Created by Devan Laczko 09/11/2024
+// Updated 05/12/2024
 
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class SewingMinigameLaunch : MonoBehaviour
+public class MinigameLaunch : MonoBehaviour
 {
     public GameObject mainCamera;
     private RaycastHit hitInfo;
@@ -13,6 +14,7 @@ public class SewingMinigameLaunch : MonoBehaviour
     public float cameraZoom;
     private bool gameStarted;
     public GameObject loadingPanel;
+    public bool loadSewing, loadPainting, loadCleaning;
     
     private void FixedUpdate()
     {
@@ -59,6 +61,18 @@ public class SewingMinigameLaunch : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         loadingPanel.SetActive(true);
-        loadingPanel.GetComponent<UILoading>().LoadSewingMinigame();
+
+        if (loadSewing)
+        {
+            loadingPanel.GetComponent<UILoading>().LoadSewingMinigame();
+        }
+        else if (loadPainting)
+        {
+            loadingPanel.GetComponent<UILoading>().LoadPaintingMinigame();
+        }
+        else if (loadCleaning)
+        {
+            loadingPanel.GetComponent<UILoading>().LoadCleaningGame();
+        }
     }
 }

@@ -1,3 +1,6 @@
+// Created by Maddie Thynne 23/10/2024
+// Updated by Devan Laczko 05/12/2024
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +22,8 @@ public class NailInteract : MonoBehaviour
     public Collider nailCollider;
     public ParticleSystem prompt;
 
+    public UISFX sfxManager;
+
     public bool inputEnabled;
     private bool interacted;
     public float speed;
@@ -30,13 +35,11 @@ public class NailInteract : MonoBehaviour
     {
         PowerGauge.nailHitEvent += NailHit;
         inputEnabled = true;
-
     }
 
     private void OnMouseDown()
     {
         Interact();
-        
     }
 
 
@@ -48,10 +51,13 @@ public class NailInteract : MonoBehaviour
         
         IdleNail.SetActive(true);
         powerGauge.SetActive(true);
+        powerGauge.GetComponent<UIScaleAnimation>().IntroAnimation();
+        powerGauge.GetComponent<PowerGauge>().isActive = true;
+        sfxManager.FurnitureSound();
 
         //todo add hammer 
         //hammerPrefab.transform.position = hammerPos.transform.position;
-        
+
 
     }
     
@@ -63,7 +69,8 @@ public class NailInteract : MonoBehaviour
             //todo add hammer 
             //hammerPrefab.SetActive(true);
             IdleNail.SetActive(false);
-            powerGauge.SetActive(false);
+            powerGauge.GetComponent<PowerGauge>().isActive = false;
+            powerGauge.GetComponent<UIScaleAnimation>().OutroWithDelay(0.5f);
             
             //todo add hammer 
             //hammer.Hit();

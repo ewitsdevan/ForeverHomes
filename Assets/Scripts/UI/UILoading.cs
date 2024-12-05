@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 18/10/2024
-// Updated 04/12/2024
+// Updated 05/12/2024
 
 using System;
 using System.Collections;
@@ -44,6 +44,16 @@ public class UILoading : MonoBehaviour
     public void LoadSewingMinigame()
     {
         StartCoroutine(LoadScene("UISewingCurtainScene"));
+    }
+
+    public void LoadPaintingMinigame()
+    {
+        StartCoroutine(LoadScene("PaintingScene"));
+    }
+
+    public void LoadCleaningGame()
+    {
+        StartCoroutine(LoadScene("CleaningScene"));
     }
 
     IEnumerator LoadScene(string sceneName)

@@ -1,5 +1,5 @@
 // Created by Maddie Thynne 23/10/2024
-// Updated by Devan Laczko 24/10/2024
+// Updated by Devan Laczko 05/12/2024
 
 using System.Collections;
 using System.Collections.Generic;
@@ -12,11 +12,13 @@ public class PowerGauge : MonoBehaviour
     public Image arrow;
     public Image background;
     public Image target;
+    public UIFadeAnimation hitPanel;
+    public UIFadeAnimation missPanel;
     
     // Settings
     public float arrowSpeed = 1.0f;
     public float maxDistance = 1.0f;
-    
+    public bool isActive;
     
     // Private Variables
     private Vector2 minPoint;
@@ -25,6 +27,7 @@ public class PowerGauge : MonoBehaviour
     private Vector2 maxTarget;
     private Vector2 _nailTarget;
     private float distance;
+
     
     public delegate void NailHitEvent(bool success);
     public static event NailHitEvent nailHitEvent;
@@ -43,7 +46,10 @@ public class PowerGauge : MonoBehaviour
     void Update()
     {
         // Move arrow
-        arrow.rectTransform.anchoredPosition += _nailTarget * (arrowSpeed * Time.deltaTime);
+        if (isActive)
+        {
+            arrow.rectTransform.anchoredPosition += _nailTarget * (arrowSpeed * Time.deltaTime);
+        }
         
         // If distance between target (end of bar) is less than maxDistance, swap target (using arrow == target statement didn't work)
         distance = Mathf.Abs(_nailTarget.x - arrow.rectTransform.anchoredPosition.x);
@@ -64,15 +70,17 @@ public class PowerGauge : MonoBehaviour
         {
             if (arrow.rectTransform.anchoredPosition.x > minTarget.x && arrow.rectTransform.anchoredPosition.x < maxTarget.x)
             {
-                Debug.Log("win");
+                Debug.Log("Hit!");
                 nailHitEvent?.Invoke(success:true);
                 //Destroy(gameObject);
+                hitPanel.IntroAnimaton();
             }
             else
             {
-                Debug.Log("lose");
+                Debug.Log("Miss!");
                 nailHitEvent?.Invoke(success:false);
                 //Destroy(gameObject);
+                missPanel.IntroAnimaton();
             }
         }
         

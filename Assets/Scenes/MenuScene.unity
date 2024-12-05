@@ -1315,6 +1315,8 @@ MonoBehaviour:
   fadeOutOnStart: 1
   startDelay: 0
   tweenDuration: 1
+  autoHide: 0
+  waitDuration: 0
 --- !u!114 &115235455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,7 +2938,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 680363922}
         m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
-        m_MethodName: PageFlipSound
+        m_MethodName: CloseBookSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3505,6 +3507,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonClickClip: {fileID: 8300000, guid: 05d8ddca7dd5c40f7884346f9b6f9158, type: 3}
   pageFlipClip: {fileID: 8300000, guid: 5ff1bbf6c989144e7ba6e256ca97cfde, type: 3}
+  hammerClip: {fileID: 0}
+  confettiClip: {fileID: 0}
+  furnitureClip: {fileID: 0}
+  rustleClip: {fileID: 0}
+  catClip: {fileID: 0}
 --- !u!1 &720410181
 GameObject:
   m_ObjectHideFlags: 0
@@ -6499,7 +6506,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2101256671}
   m_Direction: 0
   m_MinValue: -80
-  m_MaxValue: 0
+  m_MaxValue: -10
   m_WholeNumbers: 0
   m_Value: -80
   m_OnValueChanged:
@@ -6597,6 +6604,8 @@ MonoBehaviour:
   fadeOutOnStart: 0
   startDelay: 0
   tweenDuration: 1
+  autoHide: 0
+  waitDuration: 0
 --- !u!225 &1399001260
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6952,7 +6961,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 680363922}
         m_TargetAssemblyTypeName: UISFX, Assembly-CSharp
-        m_MethodName: PageFlipSound
+        m_MethodName: OpenBookSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9128,6 +9137,8 @@ MonoBehaviour:
   fadeOutOnStart: 0
   startDelay: 0
   tweenDuration: 1
+  autoHide: 0
+  waitDuration: 0
 --- !u!225 &2067701764
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -27,19 +27,14 @@ public class UIFloatAnimation : MonoBehaviour
         if (onStart)
         {
             _rectTransform.anchoredPosition = offscreenPos;
+            StartCoroutine(StartDelay(startDelay));
         }
-        
-        StartCoroutine(StartDelay());
     }
 
-    IEnumerator StartDelay()
+    IEnumerator StartDelay(float delay)
     {
-        yield return new WaitForSeconds(startDelay);
-        
-        if (onStart)
-        {
-            IntroAnimation();
-        }
+        yield return new WaitForSeconds(delay);
+        IntroAnimation();
     }
 
     public void IntroAnimation()
@@ -86,5 +81,10 @@ public class UIFloatAnimation : MonoBehaviour
     {
         yield return new WaitForSeconds(waitDuration);
         OutroAnimation();
+    }
+
+    public void IntroWithDelay(float parsedDelay)
+    {
+        StartCoroutine(StartDelay(parsedDelay));
     }
 }
