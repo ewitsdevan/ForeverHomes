@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using TMPro;
 
 public class SewingGameManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class SewingGameManager : MonoBehaviour
     public GameObject light3;
 
     public Material green;
+    public TextMeshProUGUI score;
     
     public delegate void SewingGameStartEvent();
     public event SewingGameStartEvent sewingGameStartEvent;
@@ -63,6 +65,7 @@ public class SewingGameManager : MonoBehaviour
                 sewingGameEndEvent?.Invoke(hasWon);
             }
         }
-        
+
+        score.text = sewingScore.ToString();
     }
 }

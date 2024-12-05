@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa50ba67667d74f889086b717201a4f1
+guid: 818bf2745f28b4223a63a4483aa345cc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -9,11 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: PhotoFrameTexture
     second: {fileID: 2100000, guid: 546a47cca1f6542bfb976b3477ae15bd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PhotoTexture
-    second: {fileID: 2100000, guid: 17b027171c4d56d4b9701ff7225797c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
