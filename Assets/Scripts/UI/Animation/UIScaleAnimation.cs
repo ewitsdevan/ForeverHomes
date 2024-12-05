@@ -10,9 +10,9 @@ public class UIScaleAnimation : MonoBehaviour
     private RectTransform _rectTransform;
     [SerializeField] private bool onStart;
     [SerializeField] private float startDelay;
-    [SerializeField] private Vector2 outroScale;
-    [SerializeField] private Vector2 introScale;
-    [SerializeField] private float tweenDuration;
+    [SerializeField] public Vector2 outroScale;
+    [SerializeField] public Vector2 introScale;
+    [SerializeField] public float tweenDuration;
     
     [SerializeField] private bool autoHide;
     [SerializeField] private float waitDuration;

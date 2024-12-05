@@ -38,6 +38,8 @@ public class FurnitureRepair : FurnitureBase
     public ParticleSystem confetti;
     public ParticleSystem hammerStrike;
     public UISFX sfxManager;
+    public UIScaleAnimation bookButton;
+    public GameObject book;
 
     private void OnEnable()
     {
@@ -45,7 +47,7 @@ public class FurnitureRepair : FurnitureBase
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !book.activeSelf)
         {
             if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo) &&
                 gameStarted == false)
@@ -70,6 +72,7 @@ public class FurnitureRepair : FurnitureBase
         // Change Controls UI
         cameraControls.GetComponent<UIFloatAnimation>().OutroAnimation();
         hammerControls.GetComponent<UIFloatAnimation>().IntroWithDelay(1f);
+        bookButton.OutroAnimation();
         
         // Reset Camera
         mainCamera.GetComponent<IsometricCamera>().Reset();
@@ -176,5 +179,6 @@ public class FurnitureRepair : FurnitureBase
         // Change Controls UI
         hammerControls.GetComponent<UIFloatAnimation>().OutroAnimation();
         cameraControls.GetComponent<UIFloatAnimation>().IntroWithDelay(1f);
+        bookButton.IntroAnimation();
     }
 }

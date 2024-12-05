@@ -661,10 +661,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'When all lights turn green, use MOVE to stay on the line as it passes
-    through the machine.
+  m_text: 'When all the lights turn green, use the [MOVE] buttons to keep the needle
+    on the line as it passes through the machine.
 
-    Get to the end to complete the minigame.'
+    Get to the end to successfully
+    complete the minigame.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
   m_sharedMaterial: {fileID: 8555710805152590933, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
@@ -806,6 +807,8 @@ MonoBehaviour:
   outroScale: {x: 0, y: 0}
   introScale: {x: 1, y: 1}
   tweenDuration: 0.25
+  autoHide: 0
+  waitDuration: 0
 --- !u!1 &427202343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,7 +3289,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 1000, y: 600}
+  m_SizeDelta: {x: 1250, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077323304
 MonoBehaviour:
@@ -3305,6 +3308,8 @@ MonoBehaviour:
   outroScale: {x: 0, y: 0}
   introScale: {x: 1, y: 1}
   tweenDuration: 0.25
+  autoHide: 0
+  waitDuration: 0
 --- !u!114 &1077323305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3963,6 +3968,8 @@ MonoBehaviour:
   fadeOutOnStart: 0
   startDelay: 0
   tweenDuration: 1
+  autoHide: 0
+  waitDuration: 0
 --- !u!225 &1279930592
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4160,6 +4167,8 @@ MonoBehaviour:
   fadeOutOnStart: 1
   startDelay: 0
   tweenDuration: 1
+  autoHide: 0
+  waitDuration: 0
 --- !u!114 &1293533165
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStickerManager : MonoBehaviour
 {
@@ -27,13 +28,14 @@ public class UIStickerManager : MonoBehaviour
     public static bool completionEarned;
     public GameObject completionSticker;
 
-    public static int stickersEarned;
+    public static int stickersEarned = 1;
     public TextMeshProUGUI menuText;
-    
-    public float popupDuration;
+    public Slider menuSlider;
     
     public CleaningManager cleaningManager;
     public FurnitureRepair furnitureRepair;
+
+    public UIScaleAnimation finishGameButton;
     
     public void OnEnable()
     {
@@ -53,6 +55,13 @@ public class UIStickerManager : MonoBehaviour
 
     public void CheckStickers()
     {
+        if (stickersEarned >= 4)
+        {
+            completionEarned = true;
+            stickersEarned++;
+            finishGameButton.GetComponent<Button>().interactable = true;
+        }
+        
         if (repairFurnitureEarned) repairFurnitureSticker.SetActive(true);
         if (sewingEarned) sewingSticker.SetActive(true);
         if (gramaphoneEarned) gramaphoneSticker.SetActive(true);
@@ -60,6 +69,7 @@ public class UIStickerManager : MonoBehaviour
         if (completionEarned) completionSticker.SetActive(true);
 
         menuText.text = new string(stickersEarned.ToString() + "/5");
+        menuSlider.value = stickersEarned;
     }
 
     public void ManualTriggerEarned()
@@ -76,7 +86,6 @@ public class UIStickerManager : MonoBehaviour
     public void WonCleaning(bool won)
     {
         gramaphoneEarned = won;
-        wonMinigame = won;
         stickersEarned++;
         ManualTriggerEarned();
         cleaningManager.cleaningGameEndEvent -= WonCleaning;
@@ -85,7 +94,6 @@ public class UIStickerManager : MonoBehaviour
     public void WonRepair(bool won)
     {
         repairFurnitureEarned = won;
-        wonMinigame = won;
         stickersEarned++;
         ManualTriggerEarned();
     }

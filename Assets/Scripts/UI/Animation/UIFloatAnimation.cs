@@ -85,6 +85,20 @@ public class UIFloatAnimation : MonoBehaviour
 
     public void IntroWithDelay(float parsedDelay)
     {
+        _rectTransform = GetComponent<RectTransform>();
+        if (moveX && !moveY)
+        {
+            _rectTransform.anchoredPosition = new Vector2(offscreenPos.x, _rectTransform.anchoredPosition.y);
+        }
+        else if (!moveX && moveY)
+        {
+            _rectTransform.anchoredPosition = new Vector2(_rectTransform.anchoredPosition.x, offscreenPos.y);
+        }
+        else if (moveX && moveY)
+        {
+            _rectTransform.anchoredPosition = offscreenPos;
+        }
+        
         StartCoroutine(StartDelay(parsedDelay));
     }
 }

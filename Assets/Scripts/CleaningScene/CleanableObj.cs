@@ -21,8 +21,9 @@ public class CleanableObj : MonoBehaviour
     public float dirtThreshold;
 
     public bool isClean = false;
+    public bool gameStarted;
 
-    private void Start()
+    public void Start()
     {
         CreateTexture();
     }
@@ -47,10 +48,8 @@ public class CleanableObj : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && gameStarted)
         {
-
-
             RaycastHit hitInfo;
             if (Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hitInfo))
             {

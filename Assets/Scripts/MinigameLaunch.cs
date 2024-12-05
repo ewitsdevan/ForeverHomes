@@ -15,10 +15,12 @@ public class MinigameLaunch : MonoBehaviour
     private bool gameStarted;
     public GameObject loadingPanel;
     public bool loadSewing, loadPainting, loadCleaning;
+
+    public GameObject book;
     
     private void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !book.activeSelf)
         {
             if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo) &&
                 gameStarted == false)
