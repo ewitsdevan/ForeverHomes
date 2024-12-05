@@ -53,6 +53,7 @@ public class NailInteract : MonoBehaviour
         powerGauge.SetActive(true);
         powerGauge.GetComponent<UIScaleAnimation>().IntroAnimation();
         powerGauge.GetComponent<PowerGauge>().isActive = true;
+        powerGauge.GetComponent<PowerGauge>().Init();
         sfxManager.FurnitureSound();
 
         //todo add hammer 

@@ -16,7 +16,10 @@ public class PowerGauge : MonoBehaviour
     public UIFadeAnimation missPanel;
     
     // Settings
-    public float arrowSpeed = 1.0f;
+    public float minSize = 50;
+    public float maxSize = 200;
+    public float minArrowSpeed;
+    public float maxArrowSpeed;
     public float maxDistance = 1.0f;
     public bool isActive;
     
@@ -27,18 +30,24 @@ public class PowerGauge : MonoBehaviour
     private Vector2 maxTarget;
     private Vector2 _nailTarget;
     private float distance;
+    private float arrowSpeed;
 
     
     public delegate void NailHitEvent(bool success);
     public static event NailHitEvent nailHitEvent;
 
-    void Start()
+    public void Init()
     {
+        // Randomises Difficulty (width, position, & speed)
+        target.rectTransform.sizeDelta = new Vector2(Random.Range(minSize, maxSize), 75);
+        target.rectTransform.anchoredPosition = new Vector2(Random.Range(-150, 150), -50);
+        arrowSpeed = Random.Range(minArrowSpeed, maxArrowSpeed);
+        
         // Sets min/max points using size of bars
         minPoint.x = -background.rectTransform.rect.width / 2;
         maxPoint.x = background.rectTransform.rect.width / 2;
-        minTarget.x = -target.rectTransform.rect.width / 2;
-        maxTarget.x = target.rectTransform.rect.width / 2;
+        minTarget.x = (-target.rectTransform.rect.width / 2) + target.rectTransform.anchoredPosition.x;
+        maxTarget.x = (target.rectTransform.rect.width / 2) + target.rectTransform.anchoredPosition.x;
         
         _nailTarget = maxPoint;
 

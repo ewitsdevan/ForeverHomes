@@ -9294,8 +9294,11 @@ MonoBehaviour:
   target: {fileID: 5508036678888596580}
   hitPanel: {fileID: 952798308}
   missPanel: {fileID: 18499782}
-  arrowSpeed: 2
-  maxDistance: 5
+  minSize: 50
+  maxSize: 200
+  minArrowSpeed: 4
+  maxArrowSpeed: 6
+  maxDistance: 7.5
   isActive: 0
 --- !u!114 &950758338
 MonoBehaviour:
@@ -20130,7 +20133,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 100, y: 75}
+  m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &3643634018296287194
 MeshFilter:
