@@ -26,9 +26,8 @@ public class UISettings : MonoBehaviour
 
     [Space] [Space] [Header("Graphics")]
     [SerializeField] private TMP_Dropdown _qualityDropdown;
-    
-    [Space] [Space] [Header("Version")]
-    [SerializeField] private TextMeshProUGUI _versionText;
+    public UILoading loadingManager;
+    private bool notOnStart;
     
     // Start is called before the first frame update
     void Start()
@@ -48,9 +47,7 @@ public class UISettings : MonoBehaviour
         
         // Graphics
         _qualityDropdown.value = QualitySettings.GetQualityLevel();
-        
-        //Version
-        _versionText.text = new string ("Forever Homes (Demo) Version " + Application.version + " " + Application.platform);
+        notOnStart = true;
     }
 
     public void ChangeMusicVolume()
@@ -103,5 +100,15 @@ public class UISettings : MonoBehaviour
     public void ChangeQualityLevel()
     {
         QualitySettings.SetQualityLevel(_qualityDropdown.value);
+
+        if (notOnStart)
+        {
+            loadingManager.gameObject.SetActive(true);
+            loadingManager.LoadMenuScene();
+        }
+        else
+        {
+            notOnStart = false;
+        }
     }
 }
