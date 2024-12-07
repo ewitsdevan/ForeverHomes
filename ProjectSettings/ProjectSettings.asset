@@ -141,8 +141,9 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1.0
-  preloadedAssets: []
+  bundleVersion: 0.1.0-pre2
+  preloadedAssets:
+  - {fileID: 11400000, guid: 76dc4797910e54c3485099c15edff7e9, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -914,7 +915,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: ForeverHomes
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -922,7 +923,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: ForeverHomes
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Forever Homes
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
