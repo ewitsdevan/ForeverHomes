@@ -48,8 +48,8 @@ public class UIDialogue : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Return) && !once)
         {
-            once = true;
             SkipCutscene();
+            once = true;
         }
     }
 

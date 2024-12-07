@@ -998,6 +998,7 @@ MonoBehaviour:
   grimPose1: {fileID: 1464738971}
   grimPose2: {fileID: 1500772938}
   loadingScreen: {fileID: 68767546}
+  controls: {fileID: 956359594}
   dialogues:
   - lines:
     - <i>You gain consciousness in what seems to be a black void.</i>

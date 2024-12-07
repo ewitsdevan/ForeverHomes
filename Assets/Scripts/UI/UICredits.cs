@@ -25,8 +25,8 @@ public class UICredits : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) && !once)
         {
-            once = true;
             StartCoroutine(LastElement());
+            once = true;
         }
     }
 
