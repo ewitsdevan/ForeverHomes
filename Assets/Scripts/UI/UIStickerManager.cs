@@ -22,7 +22,7 @@ public class UIStickerManager : MonoBehaviour
     public static bool gramaphoneEarned;
     public GameObject gramaphoneSticker;
 
-    public static bool paintingEarned = true;
+    public static bool paintingEarned;
     public GameObject paintingSticker;
 
     public static bool completionEarned;
@@ -86,9 +86,6 @@ public class UIStickerManager : MonoBehaviour
             completionSticker.SetActive(true);
             stickersEarned++;
         }
-
-        menuText.text = new string(stickersEarned.ToString() + "/5");
-        menuSlider.value = stickersEarned;
         
         if (stickersEarned >= 4)
         {
@@ -96,6 +93,9 @@ public class UIStickerManager : MonoBehaviour
             stickersEarned++;
             finishGameButton.GetComponent<Button>().interactable = true;
         }
+        
+        menuText.text = new string(stickersEarned.ToString() + "/5");
+        menuSlider.value = stickersEarned;
     }
 
     public void ManualTriggerEarned()

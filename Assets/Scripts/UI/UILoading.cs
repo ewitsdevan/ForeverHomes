@@ -1,5 +1,5 @@
 // Created by Devan Laczko, 18/10/2024
-// Updated 05/12/2024
+// Updated 07/12/2024
 
 using System;
 using System.Collections;
@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class UILoading : MonoBehaviour
 {
     public Image _loadingBar;
+    public float loadDelay = 1f;
     
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,13 @@ public class UILoading : MonoBehaviour
 
     public void LoadMenuScene()
     {
+        // Reset everything
+        UIStickerManager.repairFurnitureEarned = false;
+        UIStickerManager.sewingEarned = false;
+        UIStickerManager.gramaphoneEarned = false;
+        UIStickerManager.paintingEarned = false;
+        UIStickerManager.completionEarned = false;
+        
         StartCoroutine(LoadScene("MenuScene"));
     }
     
@@ -63,7 +71,7 @@ public class UILoading : MonoBehaviour
 
     IEnumerator LoadScene(string sceneName)
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(loadDelay);
         
         AsyncOperation loadLevel = SceneManager.LoadSceneAsync(sceneName);
         while (!loadLevel.isDone)
