@@ -434,12 +434,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Project Manager
 
-    Technical Director
-
     Level Designer
 
-    UI/UX
-    Designer
+    UI/UX Designer
 
 '
   m_isRightToLeft: 0
@@ -737,10 +734,10 @@ RectTransform:
   - {fileID: 1621199943}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259554727
 MonoBehaviour:
@@ -995,10 +992,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 2562, y: 1442}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496033646
 MonoBehaviour:
@@ -1582,10 +1579,10 @@ RectTransform:
   - {fileID: 1255380859}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721618657
 MonoBehaviour:
@@ -1749,10 +1746,10 @@ RectTransform:
   - {fileID: 522811664}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737860620
 MonoBehaviour:
@@ -1916,10 +1913,10 @@ RectTransform:
   - {fileID: 561236973}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 175}
-  m_SizeDelta: {x: 0, y: -350}
+  m_SizeDelta: {x: 2562, y: 1092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823366814
 MonoBehaviour:
@@ -2217,10 +2214,10 @@ RectTransform:
   - {fileID: 963568854}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 175}
-  m_SizeDelta: {x: 0, y: -350}
+  m_SizeDelta: {x: 2562, y: 1092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908975023
 MonoBehaviour:
@@ -2993,10 +2990,10 @@ RectTransform:
   - {fileID: 116384205}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253450211
 MonoBehaviour:
@@ -3184,9 +3181,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '3D Artist
 
-    Animator
-
-    Environment Designer'
+    Animator'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
   m_sharedMaterial: {fileID: 8555710805152590933, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
@@ -3405,10 +3400,10 @@ RectTransform:
   - {fileID: 553651756}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337303576
 MonoBehaviour:
@@ -3596,9 +3591,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Creative Director
 
-    VFX Artist
+    Environment Designer
 
-    3D Artist'
+    VFX Artist'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
   m_sharedMaterial: {fileID: 8555710805152590933, guid: a16c90f6b928e49b893e53e75f4e26cb, type: 2}
@@ -3732,9 +3727,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lead Programmer
+  m_text: 'Technical Director
 
-    Systems Designer
+    Lead Programmer
 
     QA Lead'
   m_isRightToLeft: 0
@@ -3848,10 +3843,10 @@ RectTransform:
   - {fileID: 2072443859}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650176820
 MonoBehaviour:
@@ -4120,10 +4115,10 @@ RectTransform:
   - {fileID: 1497781112}
   m_Father: {fileID: 1816093537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 125}
-  m_SizeDelta: {x: 0, y: -250}
+  m_SizeDelta: {x: 2562, y: 1192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1782616960
 MonoBehaviour:
