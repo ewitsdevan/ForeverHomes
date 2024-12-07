@@ -22,7 +22,7 @@ public class UIStickerManager : MonoBehaviour
     public static bool gramaphoneEarned;
     public GameObject gramaphoneSticker;
 
-    public static bool paintingEarned;
+    public static bool paintingEarned = true;
     public GameObject paintingSticker;
 
     public static bool completionEarned;

@@ -17,6 +17,7 @@ public class UIDialogue : MonoBehaviour
     public GameObject grimPose1;
     public GameObject grimPose2;
     public UILoading loadingScreen;
+    public UIFloatAnimation controls;
     
     [Serializable] public struct Dialogue { public string[] lines; }
     [SerializeField] public Dialogue[] dialogues;
@@ -25,6 +26,7 @@ public class UIDialogue : MonoBehaviour
 
     private int linesIndex;
     private int dialoguesIndex;
+    private bool once;
 
     public AudioSource buttonSFX;
     public AudioSource dialogueSFX;
@@ -44,8 +46,9 @@ public class UIDialogue : MonoBehaviour
         {
             ContinueButton();
         }
-        else if (Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetKeyDown(KeyCode.Return) && !once)
         {
+            once = true;
             SkipCutscene();
         }
     }
@@ -145,6 +148,7 @@ public class UIDialogue : MonoBehaviour
 
     public void SkipCutscene()
     {
+        controls.OutroAnimation();
         loadingScreen.gameObject.SetActive(true);
         loadingScreen.LoadGameScene();
     }

@@ -69,6 +69,11 @@ public class UILoading : MonoBehaviour
         StartCoroutine(LoadScene("EndingScene"));
     }
 
+    public void LoadCreditsScene()
+    {
+        StartCoroutine(LoadScene("CreditsScene"));
+    }
+
     IEnumerator LoadScene(string sceneName)
     {
         yield return new WaitForSeconds(loadDelay);

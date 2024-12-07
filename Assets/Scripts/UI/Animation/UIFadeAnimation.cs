@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class UIFadeAnimation : MonoBehaviour
 {
     private CanvasGroup _canvasGroup;
     [SerializeField] public bool fadeInOnStart;
     [SerializeField] public bool fadeOutOnStart;
-    [SerializeField] private float startDelay;
-    [SerializeField] private float tweenDuration;
+    [SerializeField] public float startDelay;
+    [SerializeField] public float tweenDuration;
     
     [SerializeField] private bool autoHide;
     [SerializeField] private float waitDuration;
