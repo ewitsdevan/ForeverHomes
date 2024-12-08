@@ -13,6 +13,7 @@ public class FurnitureRepair : FurnitureBase
     public GameObject mainCamera;
     private RaycastHit hitInfo;
     public GameObject[] nailPoints;
+    public GameObject nailParent;
     
     public Vector3 startRotation;
     public Vector3 objectRotation;
@@ -79,6 +80,9 @@ public class FurnitureRepair : FurnitureBase
         // Reset Camera
         mainCamera.GetComponent<IsometricCamera>().Reset();
         
+        nailParent.SetActive(true);
+        
+        
         SetCamera();
     }
 
@@ -111,6 +115,7 @@ public class FurnitureRepair : FurnitureBase
         // Show UI Panel
         minigamePanel.SetActive(true);
         minigamePanel.GetComponent<UIScaleAnimation>().IntroAnimation();
+       
         
     }
     
@@ -155,6 +160,7 @@ public class FurnitureRepair : FurnitureBase
                 
                 // Show failure UI
                 failText.GetComponent<UIScaleAnimation>().IntroAnimation();
+                gameStarted = false;
             }
             
             // Rotate chair back

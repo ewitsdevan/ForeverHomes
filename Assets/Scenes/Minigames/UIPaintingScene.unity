@@ -6735,7 +6735,7 @@ PrefabInstance:
       objectReference: {fileID: 2800000, guid: 450f85bf55d577142967ffe02e57c8cc, type: 3}
     - target: {fileID: 6086520205962664091, guid: 4256b2d92b3eb24429a1c7c6b70b98c6, type: 3}
       propertyPath: dirtThreshold
-      value: 250
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6350917924464071038, guid: 4256b2d92b3eb24429a1c7c6b70b98c6, type: 3}
       propertyPath: m_Enabled
