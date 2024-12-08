@@ -21,7 +21,7 @@ public class Painting : MonoBehaviour
 
    public event PaintingGameEndEvent paintingGameEndEvent;
 
-   private void Start()
+   public void StartGame()
    {
       StartCoroutine(GameBegins());
    }

@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/UISewingCurtainScene.unity
     guid: 82f8d692bd1b640108e2867b8e1782c8
   - enabled: 1
-    path: Assets/Scenes/Minigames/PaintingScene.unity
-    guid: 0e9c31f1cae24194a8d28c1397dcf594
+    path: Assets/Scenes/Minigames/UIPaintingScene.unity
+    guid: ff19abdaed44c4d8088b2973e021f8b1
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: 54ad6392b6e7cd24fae789341ebc1a78

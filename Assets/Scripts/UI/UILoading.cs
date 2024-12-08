@@ -56,7 +56,7 @@ public class UILoading : MonoBehaviour
 
     public void LoadPaintingMinigame()
     {
-        StartCoroutine(LoadScene("PaintingScene"));
+        StartCoroutine(LoadScene("UIPaintingScene"));
     }
 
     public void LoadCleaningGame()
