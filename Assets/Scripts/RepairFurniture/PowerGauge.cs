@@ -62,7 +62,7 @@ public class PowerGauge : MonoBehaviour
         
         // If distance between target (end of bar) is less than maxDistance, swap target (using arrow == target statement didn't work)
         distance = Mathf.Abs(_nailTarget.x - arrow.rectTransform.anchoredPosition.x);
-        if (distance < maxDistance)
+        if (distance <= maxDistance)
         {
             if (_nailTarget == maxPoint)
             {
@@ -72,7 +72,6 @@ public class PowerGauge : MonoBehaviour
             {
                 _nailTarget = maxPoint;
             }
-            
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
