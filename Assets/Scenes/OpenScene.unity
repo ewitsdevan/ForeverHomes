@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 314056065}
   - component: {fileID: 314056067}
   - component: {fileID: 314056068}
+  - component: {fileID: 314056069}
   m_Layer: 5
   m_Name: Textbox
   m_TagString: Untagged
@@ -714,6 +715,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &314056069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314056063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99c1824a4e674fa097bf4dd65f50f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 94bd0f30e4f250940b7124804a86cfee, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 10, y: 10}
 --- !u!1 &386008596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,9 +1081,9 @@ MonoBehaviour:
     - <i>There is also a small sticker of a cartoon version of himself on the front.</i>
     - 'Grim: When you have successfully repaired something, these stickers mirror
       whatever you just repaired. Once you have collected all stickers, hopefully
-      the client will let you in on their life story, allowing them to take the jounrey
+      the client will let you in on their life story, allowing them to take the journey
       to the afterlife. '
-    - 'Grim: And before you go, to repair the furiture, click on the piece you would
+    - 'Grim: And before you go, to repair the furniture, click on the piece you would
       like to repair, that will bring up a minigame. '
     - 'Grim: NOW GO! GO REPAIR SOME FOREVER HOMES!'
   speed: 0.05
@@ -1838,6 +1854,7 @@ GameObject:
   - component: {fileID: 1207585028}
   - component: {fileID: 1207585027}
   - component: {fileID: 1207585029}
+  - component: {fileID: 1207585030}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -2018,6 +2035,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1207585030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207585025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99c1824a4e674fa097bf4dd65f50f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 94bd0f30e4f250940b7124804a86cfee, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 10, y: 10}
 --- !u!1 &1439440077
 GameObject:
   m_ObjectHideFlags: 0
