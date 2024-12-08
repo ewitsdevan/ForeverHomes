@@ -9964,7 +9964,7 @@ MonoBehaviour:
   minSize: 50
   maxSize: 200
   minArrowSpeed: 4
-  maxArrowSpeed: 6
+  maxArrowSpeed: 5
   maxDistance: 10
   isActive: 0
 --- !u!114 &950758338
