@@ -3113,7 +3113,7 @@ MonoBehaviour:
   menuText: {fileID: 1238692263}
   menuSlider: {fileID: 1196625896}
   cleaningManager: {fileID: 7812783533069067611}
-  furnitureRepair: {fileID: 0}
+  furnitureRepair: {fileID: 9192288860166580486}
   finishGameButton: {fileID: 108195636}
 --- !u!4 &290003178
 Transform:
@@ -17534,6 +17534,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798106663}
   m_CullTransparentMesh: 1
+--- !u!1 &1826887699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 857735135962465773, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
+  m_PrefabInstance: {fileID: 7015897807357554050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1832129269
 GameObject:
   m_ObjectHideFlags: 0
@@ -22843,7 +22848,7 @@ PrefabInstance:
     - target: {fileID: 350021322222613931, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
       propertyPath: nailParent
       value: 
-      objectReference: {fileID: 7015897807357554052}
+      objectReference: {fileID: 1826887699}
     - target: {fileID: 350021322222613931, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
       propertyPath: sfxManager
       value: 
@@ -23068,11 +23073,6 @@ PrefabInstance:
 --- !u!64 &7015897807357554051 stripped
 MeshCollider:
   m_CorrespondingSourceObject: {fileID: 6312934830187897922, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
-  m_PrefabInstance: {fileID: 7015897807357554050}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7015897807357554052 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 857735135962465773, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
   m_PrefabInstance: {fileID: 7015897807357554050}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7087273497797882676
@@ -24076,6 +24076,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2219408071157826695, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
   m_PrefabInstance: {fileID: 7015897807357554050}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9192288860166580486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 350021322222613931, guid: a9f8cd0f1e9a54c77ac091e250c15f37, type: 3}
+  m_PrefabInstance: {fileID: 7015897807357554050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43702ad3283513645a67f55284cbe1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
