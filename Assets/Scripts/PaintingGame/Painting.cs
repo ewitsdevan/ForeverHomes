@@ -8,6 +8,7 @@ public class Painting : MonoBehaviour
    public CleanableObj grass;
    public CleanableObj flower;
    public CleanableObj sky;
+   public CleanableObj stem;
 
    public GameObject paintInput;
 
@@ -21,7 +22,7 @@ public class Painting : MonoBehaviour
 
    public event PaintingGameEndEvent paintingGameEndEvent;
 
-   public void StartGame()
+   public void Start()
    {
       StartCoroutine(GameBegins());
    }
@@ -33,10 +34,12 @@ public class Painting : MonoBehaviour
       sky.gameStarted = true;
       grass.gameStarted = true;
       flower.gameStarted = true;
+      stem.gameStarted = true;
       
       sky.enabled = false;
       grass.enabled = false;
       flower.enabled = false;
+      stem.enabled = false;
    }
 
    private void Update()
@@ -63,9 +66,10 @@ public class Painting : MonoBehaviour
          sky.enabled = false;
          grass.enabled = false;
          flower.enabled = false;
+         stem.enabled = false;
          paintInput.SetActive(true);
-         
-         if(selectedObj == 0)
+
+         if (selectedObj == 0)
          {
             grass.enabled = true;
 
@@ -73,13 +77,13 @@ public class Painting : MonoBehaviour
             {
                WinCheck();
             }
-            
+
          }
 
          if (selectedObj == 1)
          {
             flower.enabled = true;
-            
+
             if (flower.isClean == true)
             {
                WinCheck();
@@ -89,25 +93,34 @@ public class Painting : MonoBehaviour
          if (selectedObj == 2)
          {
             sky.enabled = true;
-            
+
             if (sky.isClean == true)
             {
                WinCheck();
             }
          }
+
+         if (selectedObj == 3)
+         {
+            stem.enabled = true;
+
+            if (stem.isClean == true)
+            {
+               WinCheck();
+            }
+         }
+
       }
 
-   }
-
-   void WinCheck()
-   {
-      if (grass.isClean == true && flower.isClean == true && sky.isClean == true)
+      void WinCheck()
       {
-         paintingGameEndEvent?.Invoke(true);
+         if (grass.isClean == true && flower.isClean == true && sky.isClean == true && stem.isClean == true)
+         {
+            paintingGameEndEvent?.Invoke(true);
+         }
       }
+
+
+
    }
-   
-   
-   
-   
 }
