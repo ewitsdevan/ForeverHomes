@@ -2746,7 +2746,7 @@ MonoBehaviour:
   moveX: 0
   moveY: 1
   offscreenPos: {x: 0, y: -750}
-  onscreenPos: {x: 0, y: -500}
+  onscreenPos: {x: 0, y: -450}
   tweenDuration: 0.25
   autoHide: 0
   waitDuration: 0
