@@ -41,6 +41,8 @@ public class FurnitureRepair : FurnitureBase
     public UIScaleAnimation bookButton;
     public GameObject book;
 
+    public bool interacting = false;
+
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;

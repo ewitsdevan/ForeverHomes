@@ -19,13 +19,16 @@ public class NailInteract : MonoBehaviour
     public GameObject SuccessNail;
     public GameObject FailNail;
 
+    public FurnitureRepair manager;
+
     public Collider nailCollider;
     public ParticleSystem prompt;
 
     public UISFX sfxManager;
-
+    
     public bool inputEnabled;
     private bool interacted;
+    public bool nailSet;
     public float speed;
 
     
@@ -39,13 +42,20 @@ public class NailInteract : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Interact();
+        if (manager.interacting == false)
+        {
+            manager.interacting = true;
+            Interact();
+        }
+
+
     }
 
 
     void Interact()
     {
         interacted = true;
+        prompt.Clear();
         prompt.Stop();
         inputEnabled = false;
         
@@ -56,49 +66,35 @@ public class NailInteract : MonoBehaviour
         powerGauge.GetComponent<PowerGauge>().Init();
         sfxManager.FurnitureSound();
 
-        //todo add hammer 
-        //hammerPrefab.transform.position = hammerPos.transform.position;
-
-
     }
     
             
     private void NailHit(bool success)
     {
-        if (interacted)
+        if (nailSet == false)
         {
-            //todo add hammer 
-            //hammerPrefab.SetActive(true);
-            IdleNail.SetActive(false);
-            powerGauge.GetComponent<PowerGauge>().isActive = false;
-            powerGauge.GetComponent<UIScaleAnimation>().OutroWithDelay(0.5f);
-            
-            //todo add hammer 
-            //hammer.Hit();
-            
-
-            if (success)
+            if (interacted)
             {
-                SuccessNail.SetActive(true);
-                //set success nail active
-                //play success particle
-                
-                //todo add hammer 
-                //StartCoroutine(DeleteHammer());
+                IdleNail.SetActive(false);
+                powerGauge.GetComponent<PowerGauge>().isActive = false;
+                powerGauge.GetComponent<UIScaleAnimation>().OutroWithDelay(0.5f);
 
+                if (success)
+                {
+                    SuccessNail.SetActive(true);
+                }
+
+                if (success == false)
+                {
+                    FailNail.SetActive(true);
+                }
+
+                nailSet = true;
+                nailCollider.enabled = false;
+                manager.interacting = false;
             }
 
-            if (success == false)
-            {
-                FailNail.SetActive(true);
-                //play fail particle
-            }
-            
-            interacted = false;
-            nailCollider.enabled = false;
         }
-
-        
 
     }
 

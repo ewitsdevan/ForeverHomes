@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Painting : MonoBehaviour
@@ -19,14 +21,24 @@ public class Painting : MonoBehaviour
 
    public event PaintingGameEndEvent paintingGameEndEvent;
 
-
    private void Start()
    {
+      StartCoroutine(GameBegins());
+   }
+
+   IEnumerator GameBegins()
+   {
+      yield return new WaitForSeconds(3f);
+      
+      sky.gameStarted = true;
+      grass.gameStarted = true;
+      flower.gameStarted = true;
+      
       sky.enabled = false;
       grass.enabled = false;
       flower.enabled = false;
-
    }
+
    private void Update()
    {
       if(Input.GetMouseButtonDown(0))
@@ -36,16 +48,12 @@ public class Painting : MonoBehaviour
          {
             if (hitInfo.collider.GetComponentInChildren<PaintedObject>() != null)
             {
-               //Debug.Log("Test");
                int selectedObj = hitInfo.collider.GetComponentInChildren<PaintedObject>().objectName;
                CanWeColour(selectedObj);
-               paintInput.SetActive(true);
+               
             }
-
          }
       }
-
-
    }
 
    public void CanWeColour(int selectedObj)
@@ -55,6 +63,7 @@ public class Painting : MonoBehaviour
          sky.enabled = false;
          grass.enabled = false;
          flower.enabled = false;
+         paintInput.SetActive(true);
          
          if(selectedObj == 0)
          {
@@ -86,10 +95,6 @@ public class Painting : MonoBehaviour
                WinCheck();
             }
          }
-      }
-      else
-      {
-         //not able to paint, add particle effect?
       }
 
    }
