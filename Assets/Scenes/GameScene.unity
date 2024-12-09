@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 108195637}
   - component: {fileID: 108195636}
   - component: {fileID: 108195635}
+  - component: {fileID: 108195640}
   m_Layer: 5
   m_Name: Finish Level
   m_TagString: Untagged
@@ -900,11 +901,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingManager: {fileID: 659275231}
   buttonText: {fileID: 1201820643}
+  warningPanel: {fileID: 0}
+  moveTo: {x: 0, y: 0}
   outroScale: {x: 0.5, y: 0.5}
-  introScale: {x: 15, y: 15}
+  introScale: {x: 7, y: 10}
   tweenDuration: 0.5
   growDelay: 0.5
   loadDelay: 0.5
+  open: 0
+  finish: 1
+  credits: 0
 --- !u!114 &108195636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,8 +975,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 108195635}
-        m_TargetAssemblyTypeName: UIFinishGame, Assembly-CSharp
-        m_MethodName: FinishGame
+        m_TargetAssemblyTypeName: UIButtonTransition, Assembly-CSharp
+        m_MethodName: Trigger
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1030,6 +1036,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108195633}
   m_CullTransparentMesh: 1
+--- !u!114 &108195640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108195633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99c1824a4e674fa097bf4dd65f50f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 94bd0f30e4f250940b7124804a86cfee, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 10, y: 10}
 --- !u!1 &118314698
 GameObject:
   m_ObjectHideFlags: 0

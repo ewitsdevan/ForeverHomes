@@ -80,16 +80,11 @@ public class UIStickerManager : MonoBehaviour
             paintingSticker.SetActive(true);
             stickersEarned++;
         }
-
-        if (completionEarned)
-        {
-            completionSticker.SetActive(true);
-            stickersEarned++;
-        }
         
         if (stickersEarned >= 4)
         {
             completionEarned = true;
+            completionSticker.SetActive(true);
             stickersEarned++;
             finishGameButton.GetComponent<Button>().interactable = true;
         }

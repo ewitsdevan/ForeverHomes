@@ -1796,6 +1796,7 @@ GameObject:
   - component: {fileID: 207939246}
   - component: {fileID: 207939249}
   - component: {fileID: 207939250}
+  - component: {fileID: 207939251}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -1816,12 +1817,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1268702452}
-  - {fileID: 1647128120}
   m_Father: {fileID: 2022819085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -350}
+  m_AnchoredPosition: {x: 0, y: -375}
   m_SizeDelta: {x: 425, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207939246
@@ -1880,10 +1880,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1455829969}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 207939251}
+        m_TargetAssemblyTypeName: UIButtonTransition, Assembly-CSharp
+        m_MethodName: Trigger
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1892,10 +1892,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2067701757}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1181894587}
+        m_TargetAssemblyTypeName: UIFadeAnimation, Assembly-CSharp
+        m_MethodName: OutroAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1904,9 +1904,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2067701762}
-        m_TargetAssemblyTypeName: UILoading, Assembly-CSharp
-        m_MethodName: LoadOpenScene
+      - m_Target: {fileID: 1726083055}
+        m_TargetAssemblyTypeName: UIFloatAnimation, Assembly-CSharp
+        m_MethodName: OutroAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 70252437}
+        m_TargetAssemblyTypeName: UIScaleAnimation, Assembly-CSharp
+        m_MethodName: OutroAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1456682417}
+        m_TargetAssemblyTypeName: UIScaleAnimation, Assembly-CSharp
+        m_MethodName: OutroAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1988,6 +2012,30 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: 94bd0f30e4f250940b7124804a86cfee, type: 3}
   cursorMode: 0
   hotSpot: {x: 10, y: 10}
+--- !u!114 &207939251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207939244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70972c374df684cbb8610acb63a0b24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingManager: {fileID: 2067701757}
+  buttonText: {fileID: 1268702455}
+  warningPanel: {fileID: 1455829969}
+  moveTo: {x: 0, y: 0}
+  outroScale: {x: 0.5, y: 0.5}
+  introScale: {x: 7, y: 10}
+  tweenDuration: 0.5
+  growDelay: 0.5
+  loadDelay: 0.5
+  open: 1
+  finish: 0
+  credits: 0
 --- !u!1 &230840135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,6 +6034,8 @@ GameObject:
   - component: {fileID: 1268702452}
   - component: {fileID: 1268702454}
   - component: {fileID: 1268702453}
+  - component: {fileID: 1268702456}
+  - component: {fileID: 1268702455}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6004,7 +6054,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1647128120}
   m_Father: {fileID: 207939245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6109,6 +6160,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268702451}
   m_CullTransparentMesh: 1
+--- !u!114 &1268702455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268702451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1c5050e852b49e883688ac241d9b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeInOnStart: 0
+  fadeOutOnStart: 0
+  startDelay: 0
+  tweenDuration: 0.25
+  autoHide: 0
+  waitDuration: 0
+--- !u!225 &1268702456
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268702451}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1335446686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6859,8 +6940,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1181894584}
-  - {fileID: 2022819085}
   - {fileID: 1726083054}
+  - {fileID: 2022819085}
   m_Father: {fileID: 1148593059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8557,11 +8638,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 207939245}
+  m_Father: {fileID: 1268702452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
+  m_AnchoredPosition: {x: -150, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647128121
@@ -9781,9 +9862,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 207939245}
   - {fileID: 70252432}
   - {fileID: 1456682413}
+  - {fileID: 207939245}
   m_Father: {fileID: 1399001258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
