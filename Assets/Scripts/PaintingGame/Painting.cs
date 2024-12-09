@@ -22,6 +22,8 @@ public class Painting : MonoBehaviour
 
    public event PaintingGameEndEvent paintingGameEndEvent;
 
+   private bool once;
+
    public void Start()
    {
       StartCoroutine(GameBegins());
@@ -53,9 +55,13 @@ public class Painting : MonoBehaviour
             {
                int selectedObj = hitInfo.collider.GetComponentInChildren<PaintedObject>().objectName;
                CanWeColour(selectedObj);
-               
             }
          }
+      }
+
+      if (!once)
+      {
+         WinCheck();
       }
    }
 
@@ -111,16 +117,14 @@ public class Painting : MonoBehaviour
          }
 
       }
-
-      void WinCheck()
+   } 
+   
+   void WinCheck() 
+   {
+      if (grass.isClean == true && flower.isClean == true && sky.isClean == true && stem.isClean == true)
       {
-         if (grass.isClean == true && flower.isClean == true && sky.isClean == true && stem.isClean == true)
-         {
-            paintingGameEndEvent?.Invoke(true);
-         }
+         paintingGameEndEvent?.Invoke(true);
+         once = true;
       }
-
-
-
    }
 }
