@@ -31,7 +31,7 @@ public class CleaningManager : MonoBehaviour
     public ParticleSystem confetti;
     public UISFX sfxManager;
 
-    private bool gameStarted;
+    public bool gameStarted;
     private bool once;
 
     public GameObject book;
@@ -43,8 +43,9 @@ public class CleaningManager : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(camera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo))
             {
-                if (hitInfo.collider.gameObject == cleanableObj.gameObject)
+                if (hitInfo.collider.gameObject == gameObject)
                 {
+                    print("Cleaning Minigame Started");
                     gameStarted = true;
                     Launch();
                 }
@@ -53,8 +54,6 @@ public class CleaningManager : MonoBehaviour
         
         if (cleanableObj.isClean && !once)
         {
-            once = true;
-            
             // Earn Sticker
             cleaningGameEndEvent?.Invoke(true);
             
@@ -63,9 +62,8 @@ public class CleaningManager : MonoBehaviour
             confetti.Play();
             sfxManager.ConfettiSound();
             
-            // Rotate record back
-            objectToMove.transform.DOLocalRotate(startRotation, moveSpeed).SetDelay(1.0f);
-            objectToMove.transform.DOLocalMove(startPosition, moveSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
+            Reset();
+            once = true;
         }
     }
     
@@ -77,6 +75,9 @@ public class CleaningManager : MonoBehaviour
         // Change Controls UI
         cameraControls.OutroAnimation();
         bookButton.OutroAnimation();
+        
+        // Disable Collider
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         
         // Reset Camera
         camera.GetComponent<IsometricCamera>().Reset();
@@ -105,23 +106,35 @@ public class CleaningManager : MonoBehaviour
     {
         // Show UI Panel
         minigamePanel.SetActive(true);
-        minigamePanel.GetComponent<UIScaleAnimation>().IntroAnimation();
+        tutorialPanel.GetComponent<UIScaleAnimation>().IntroAnimation();
     }
 
     public void BeginGame()
     {
         cleanableObj.gameStarted = true;
+        once = false;
     }
     
-    
-    
-    void FinishGame()
+    public void Reset()
     {
+        // Rotate record back
+        objectToMove.transform.DOLocalRotate(startRotation, moveSpeed).SetDelay(1.0f);
+        objectToMove.transform.DOLocalMove(startPosition, moveSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
+    }
+    
+    public void FinishGame()
+    {
+        // Reset Cleaning Minigame State For Replay
+        gameStarted = false;
+        cleanableObj.gameStarted = false;
+        cleanableObj.isClean = false;
+        cleanableObj.CreateTexture();
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        
         // Reenables player camera controls via Reset
         camera.GetComponent<IsometricCamera>().Reset();
         
         // Reset and Disable UI
-        tutorialPanel.SetActive(true);
         minigamePanel.SetActive(false);
         
         // Change Controls UI

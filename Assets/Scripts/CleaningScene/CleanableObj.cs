@@ -31,7 +31,7 @@ public class CleanableObj : MonoBehaviour
         }
     }
 
-    void CreateTexture()
+    public void CreateTexture()
     {
         dirtMask = Instantiate(dirtMaskOG);
         dirtMask = new Texture2D(dirtMaskOG.width, dirtMaskOG.height);
