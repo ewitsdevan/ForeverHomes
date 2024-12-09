@@ -28,6 +28,7 @@ public class FurnitureRepair : FurnitureBase
     private float curHitCount;
     public float winThreshold;
 
+    public GameObject collider;
     public GameObject minigamePanel;
     public GameObject gaugeMeter;
     public GameObject tutorialPanel;
@@ -52,14 +53,33 @@ public class FurnitureRepair : FurnitureBase
     {
         if (Input.GetMouseButtonDown(0) && !book.activeSelf)
         {
-            if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo) &&
-                gameStarted == false)
+            if (Physics.Raycast(mainCamera.GetComponentInChildren<Camera>().ScreenPointToRay(Input.mousePosition), out hitInfo))
             {
-                if (hitInfo.collider.GetComponentInParent<FurnitureBase>() != null)
+                if (gameStarted == false)
                 {
-                    Launch();
+                    if (hitInfo.collider.gameObject == collider)
+                    {
+                        Launch();
+                    }
                 }
-
+                else if (gameStarted && !interacting)
+                {
+                    // For selecting nails
+                    foreach (GameObject nail in nailPoints)
+                    {
+                        if (hitInfo.collider.gameObject == nail)
+                        {
+                            // If nail is the one clicked
+                            nail.GetComponent<NailInteract>().Interact();
+                        }
+                        else
+                        {
+                            // Every other nail is ensured to not be listening and unclickable
+                            nail.GetComponent<NailInteract>().interacted = false;
+                            nail.GetComponent<SphereCollider>().enabled = false;
+                        }
+                    }
+                }
             }
         }
     }
@@ -69,8 +89,8 @@ public class FurnitureRepair : FurnitureBase
         // Play Sound
         sfxManager.FurnitureSound();
         
-        gameStarted = true;
-        //startPos = mainCamera.transform;
+        // Setup Game
+        collider.GetComponent<MeshCollider>().enabled = false;
         
         // Change Controls UI
         cameraControls.GetComponent<UIFloatAnimation>().OutroAnimation();
@@ -79,9 +99,6 @@ public class FurnitureRepair : FurnitureBase
         
         // Reset Camera
         mainCamera.GetComponent<IsometricCamera>().Reset();
-        
-        nailParent.SetActive(true);
-        
         
         SetCamera();
     }
@@ -98,74 +115,86 @@ public class FurnitureRepair : FurnitureBase
             mainCamera.GetComponent<IsometricCamera>().minigameZoom = cameraZoom;
             
             //rotate chair
-            gameObject.transform.DOLocalRotate(objectRotation, rotateSpeed).SetDelay(0.25f).OnComplete(BeginGame).SetEase(Ease.InOutBack);
+            gameObject.transform.DOLocalRotate(objectRotation, rotateSpeed).SetDelay(0.25f).OnComplete(ShowUI).SetEase(Ease.InOutBack);
         }).SetEase(Ease.OutSine);
     }
 
-    void BeginGame()
+    void ShowUI()
     {
+        // Show UI Panel
+        minigamePanel.SetActive(true);
+        tutorialPanel.GetComponent<UIScaleAnimation>().IntroAnimation();
+    }
 
+    public void BeginGame()
+    {
+        gameStarted = true;
+        nailParent.SetActive(true);
+        
         for (int i = 0; i < nailPoints.Length; i++)
         {
-            nailPoints[i].SetActive(true);
+            nailPoints[i].GetComponent<NailInteract>().inputEnabled = true;
+            nailPoints[i].GetComponent<SphereCollider>().enabled = true;
         }
         
         maxHitCount = nailPoints.Length;
-        
-        // Show UI Panel
-        minigamePanel.SetActive(true);
-        minigamePanel.GetComponent<UIScaleAnimation>().IntroAnimation();
-       
-        
     }
     
     void NailHit(bool success)
     {
-        // Hammer strike VFX
-        hammerStrike.Play();
+        if (interacting)
+        {
+            // Hammer strike VFX
+            hammerStrike.Play();
         
-        if (success)
-        {
-            sfxManager.HammerHitSound();
-            //nailPosition.SuccessfulHit();
-            successfulHitCount++;
-            curHitCount++;
-        }
-
-        if (success == false)
-        {
-            sfxManager.HammerMissSound();
-            //nailPosition.FailedHit();
-            curHitCount++;
-        }
-
-        if (curHitCount >= maxHitCount)
-        {
-            //finish game
-            if (successfulHitCount >= winThreshold)
+            if (success)
             {
-                //win game
-                Debug.Log("you have won");
-                stickerManager.WonRepair(true);
-                
-                // Show success UI
-                successText.GetComponent<UIScaleAnimation>().IntroAnimation();
-                confetti.Play();
-                sfxManager.ConfettiSound();
+                sfxManager.HammerHitSound();
+                //nailPosition.SuccessfulHit();
+                successfulHitCount++;
+                curHitCount++;
             }
             else
             {
-                //lose game
-                Debug.Log("you have lost");
-                
-                // Show failure UI
-                failText.GetComponent<UIScaleAnimation>().IntroAnimation();
-                gameStarted = false;
+                sfxManager.HammerMissSound();
+                //nailPosition.FailedHit();
+                curHitCount++;
             }
+        
+            // Turn back on colliders after hitting a nail
+            foreach (GameObject nail in nailPoints)
+            {
+                if (nail.GetComponent<NailInteract>().interacted == false)
+                {
+                    nail.GetComponent<SphereCollider>().enabled = true;
+                }
+            }
+
+            if (curHitCount >= maxHitCount)
+            {
+                //finish game
+                if (successfulHitCount >= winThreshold)
+                {
+                    //win game
+                    Debug.Log("you have won");
+                    stickerManager.WonRepair(true);
+                
+                    // Show success UI
+                    successText.GetComponent<UIScaleAnimation>().IntroAnimation();
+                    confetti.Play();
+                    sfxManager.ConfettiSound();
+                }
+                else
+                {
+                    //lose game
+                    Debug.Log("you have lost");
+                
+                    // Show failure UI
+                    failText.GetComponent<UIScaleAnimation>().IntroAnimation();
+                }
             
-            // Rotate chair back
-            gameObject.transform.DOLocalRotate(startRotation, rotateSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
-            
+                Reset();
+            }
         }
     }
 
@@ -174,14 +203,28 @@ public class FurnitureRepair : FurnitureBase
         PowerGauge.nailHitEvent -= NailHit;
     }
 
+    public void Reset()
+    {
+        // Rotate chair back
+        gameObject.transform.DOLocalRotate(startRotation, rotateSpeed).SetDelay(1.0f).OnComplete(FinishGame).SetEase(Ease.InOutBack);
+    }
+
     void FinishGame()
     {
+        // Reset Repair minigame for replayability
+        curHitCount = 0;
+        gameStarted = false;
+        foreach (GameObject nail in nailPoints)
+        {
+            nail.GetComponent<NailInteract>().Reset();
+        }
+        nailParent.SetActive(false);
+        collider.GetComponent<MeshCollider>().enabled = true;
+        
         // Reenables player camera controls via Reset
         mainCamera.GetComponent<IsometricCamera>().Reset();
         
         // Reset and Disable UI
-        gaugeMeter.SetActive(false);
-        tutorialPanel.SetActive(true);
         minigamePanel.SetActive(false);
         
         // Change Controls UI

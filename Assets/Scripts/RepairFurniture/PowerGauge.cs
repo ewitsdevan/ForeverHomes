@@ -78,16 +78,12 @@ public class PowerGauge : MonoBehaviour
         {
             if (arrow.rectTransform.anchoredPosition.x > minTarget.x && arrow.rectTransform.anchoredPosition.x < maxTarget.x)
             {
-                Debug.Log("Hit!");
                 nailHitEvent?.Invoke(success:true);
-                //Destroy(gameObject);
                 hitPanel.IntroAnimaton();
             }
             else
             {
-                Debug.Log("Miss!");
                 nailHitEvent?.Invoke(success:false);
-                //Destroy(gameObject);
                 missPanel.IntroAnimaton();
             }
         }

@@ -27,33 +27,19 @@ public class NailInteract : MonoBehaviour
     public UISFX sfxManager;
     
     public bool inputEnabled;
-    private bool interacted;
+    public bool interacted;
     public bool nailSet;
     public float speed;
-
-    
-        
     
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;
         inputEnabled = true;
     }
-
-    private void OnMouseDown()
+    
+    public void Interact()
     {
-        if (manager.interacting == false)
-        {
-            manager.interacting = true;
-            Interact();
-        }
-
-
-    }
-
-
-    void Interact()
-    {
+        manager.interacting = true;
         interacted = true;
         prompt.Clear();
         prompt.Stop();
@@ -65,7 +51,6 @@ public class NailInteract : MonoBehaviour
         powerGauge.GetComponent<PowerGauge>().isActive = true;
         powerGauge.GetComponent<PowerGauge>().Init();
         sfxManager.FurnitureSound();
-
     }
     
             
@@ -108,5 +93,16 @@ public class NailInteract : MonoBehaviour
     {
         PowerGauge.nailHitEvent += NailHit;
         inputEnabled = false;
+    }
+
+    public void Reset()
+    {
+        SuccessNail.SetActive(false);
+        FailNail.SetActive(false);
+        IdleNail.SetActive(true);
+        nailSet = false;
+        inputEnabled = false;
+        interacted = false;
+        gameObject.GetComponent<SphereCollider>().enabled = false;
     }
 }
