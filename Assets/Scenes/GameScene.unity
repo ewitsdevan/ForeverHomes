@@ -904,7 +904,7 @@ MonoBehaviour:
   warningPanel: {fileID: 0}
   moveTo: {x: 0, y: 0}
   outroScale: {x: 0.5, y: 0.5}
-  introScale: {x: 7, y: 10}
+  introScale: {x: 10, y: 15}
   tweenDuration: 0.5
   growDelay: 0.5
   loadDelay: 0.5
