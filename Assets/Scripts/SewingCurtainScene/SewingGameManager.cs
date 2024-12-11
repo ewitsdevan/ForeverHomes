@@ -34,7 +34,7 @@ public class SewingGameManager : MonoBehaviour
     public void BeginGame()
     {
         sewingGameStartEvent?.Invoke();
-        
+        scoreSlider.maxValue = winThreshold;
         StartCoroutine(waitToBegin());
         
     }
@@ -70,6 +70,5 @@ public class SewingGameManager : MonoBehaviour
 
         score.text = new string(sewingScore + "/" + winThreshold);
         scoreSlider.value = sewingScore;
-        scoreSlider.maxValue = winThreshold;
     }
 }

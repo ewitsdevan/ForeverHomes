@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class FurnitureRepair : FurnitureBase
 {
@@ -42,12 +44,17 @@ public class FurnitureRepair : FurnitureBase
     public UISFX sfxManager;
     public UIScaleAnimation bookButton;
     public GameObject book;
+    public TextMeshProUGUI score;
+    public Slider scoreSlider;
 
     public bool interacting = false;
 
     private void OnEnable()
     {
         PowerGauge.nailHitEvent += NailHit;
+        scoreSlider.value = successfulHitCount;
+        scoreSlider.maxValue = winThreshold;
+        score.text = new string(successfulHitCount + "/" + winThreshold);
     }
     private void Update()
     {
@@ -153,12 +160,16 @@ public class FurnitureRepair : FurnitureBase
                 //nailPosition.SuccessfulHit();
                 successfulHitCount++;
                 curHitCount++;
+                score.text = new string(successfulHitCount + "/" + winThreshold);
+                scoreSlider.value = successfulHitCount;
             }
             else
             {
                 sfxManager.HammerMissSound();
                 //nailPosition.FailedHit();
                 curHitCount++;
+                score.text = new string(successfulHitCount + "/" + winThreshold);
+                scoreSlider.value = successfulHitCount;
             }
         
             // Turn back on colliders after hitting a nail
@@ -192,7 +203,8 @@ public class FurnitureRepair : FurnitureBase
                     // Show failure UI
                     failText.GetComponent<UIScaleAnimation>().IntroAnimation();
                 }
-            
+                
+                scoreSlider.GetComponent<UIFloatAnimation>().OutroAnimation();
                 Reset();
             }
         }
