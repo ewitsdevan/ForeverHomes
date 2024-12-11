@@ -1259,7 +1259,7 @@ MonoBehaviour:
   needleControl: {fileID: 615958746}
   hasFinished: 0
   hasWon: 0
-  winThreshold: 600
+  winThreshold: 200
   sewingScore: 0
   light1: {fileID: 204674025403892469}
   light2: {fileID: 5638073979188148266}
