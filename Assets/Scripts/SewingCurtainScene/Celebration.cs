@@ -12,6 +12,7 @@ public class Celebration : MonoBehaviour
     public GameObject failText;
     public UISFX sfxManager;
     public ParticleSystem confetti;
+    public UIFloatAnimation scoreSlider;
 
     private bool once;
 
@@ -39,6 +40,7 @@ public class Celebration : MonoBehaviour
         {
             once = true;
             Debug.Log("particle effect, wooo, back to main scene");
+            scoreSlider.OutroAnimation();
             successText.SetActive(true);
             outcomePanel.SetActive(true);
             sfxManager.ConfettiSound();
@@ -57,6 +59,7 @@ public class Celebration : MonoBehaviour
         if (once == false)
         {
             Debug.Log("boooo u suck");
+            scoreSlider.OutroAnimation();
             failText.SetActive(true);
             retryButton.SetActive(true);
             outcomePanel.SetActive(true);

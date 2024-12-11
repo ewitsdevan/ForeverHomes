@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SewingGameManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class SewingGameManager : MonoBehaviour
 
     public Material green;
     public TextMeshProUGUI score;
+    public Slider scoreSlider;
     
     public delegate void SewingGameStartEvent();
     public event SewingGameStartEvent sewingGameStartEvent;
@@ -66,6 +68,8 @@ public class SewingGameManager : MonoBehaviour
             }
         }
 
-        score.text = new string("Score: " + sewingScore);
+        score.text = new string(sewingScore + "/" + winThreshold);
+        scoreSlider.value = sewingScore;
+        scoreSlider.maxValue = winThreshold;
     }
 }
