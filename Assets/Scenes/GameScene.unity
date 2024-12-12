@@ -9669,7 +9669,7 @@ MonoBehaviour:
   minSize: 50
   maxSize: 200
   minArrowSpeed: 4
-  maxArrowSpeed: 5
+  maxArrowSpeed: 4
   maxDistance: 20
   isActive: 0
 --- !u!114 &950758338
@@ -13054,7 +13054,6 @@ GameObject:
   - component: {fileID: 1261306062}
   - component: {fileID: 1261306061}
   - component: {fileID: 1261306064}
-  - component: {fileID: 1261306066}
   m_Layer: 5
   m_Name: Sticker Earned
   m_TagString: Untagged
@@ -13142,21 +13141,6 @@ MonoBehaviour:
   tweenDuration: 0.5
   autoHide: 1
   waitDuration: 3
---- !u!114 &1261306066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261306058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e99c1824a4e674fa097bf4dd65f50f0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 94bd0f30e4f250940b7124804a86cfee, type: 3}
-  cursorMode: 0
-  hotSpot: {x: 10, y: 10}
 --- !u!1 &1265720364
 GameObject:
   m_ObjectHideFlags: 0
@@ -21906,6 +21890,7 @@ GameObject:
   - component: {fileID: 1565276513755221814}
   - component: {fileID: 2316760621316473931}
   - component: {fileID: 7856251857728652874}
+  - component: {fileID: 7856251857728652875}
   m_Layer: 5
   m_Name: Arrow
   m_TagString: Untagged
@@ -25598,7 +25583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25615,6 +25600,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7856251857728652875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185053919813096915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.09803922}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!23 &7888664119556937336
 MeshRenderer:
   m_ObjectHideFlags: 0
