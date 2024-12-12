@@ -82,8 +82,11 @@ public class FurnitureRepair : FurnitureBase
                         else
                         {
                             // Every other nail is ensured to not be listening and unclickable
-                            nail.GetComponent<NailInteract>().interacted = false;
-                            nail.GetComponent<SphereCollider>().enabled = false;
+                            if (!nail.GetComponent<NailInteract>().nailSet)
+                            {
+                                nail.GetComponent<NailInteract>().interacted = false;
+                                nail.GetComponent<SphereCollider>().enabled = false;
+                            }
                         }
                     }
                 }
